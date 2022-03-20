@@ -22,5 +22,9 @@ const exibeNomeNota = (nomeAluno) => {
     }
 }
 //Exeibição do retorno da função exibeNomeNota via função 
+<<<<<<< HEAD
 //console.log(par).
+=======
+//console.log(par)
+>>>>>>> a66340b9bcbdd1f35120bc8e0f66de3028f4930d
 console.log(exibeNomeNota('Juliana'));
