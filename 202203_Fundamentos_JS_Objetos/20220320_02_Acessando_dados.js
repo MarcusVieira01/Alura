@@ -1,4 +1,5 @@
 //Acessando dados dos objetos
+//Declaração do objeto
 const cliente = {
     nome:'André',
     idade:36,
