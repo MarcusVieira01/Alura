@@ -1,5 +1,5 @@
 //Tipos de dados e valores
-//
+//Declaração de objeto
 const cliente = {
     nome:'André',
     idade:36,
