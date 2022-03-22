@@ -6,7 +6,7 @@ const cliente = {
     cpf:'45696325811',
     email:'andre@andremail.com'
 }
-
+//Chamada de propriedade com atribuição do valor
 cliente.telefone = '11564899962'
-
+//Exibição do objeto cliente
 console.log(cliente);
