@@ -1,5 +1,5 @@
 //Primeiro problema
-//DEclaração de variáveis e atribuição dos valores de 
+//Declaração de variáveis e atribuição dos valores de 
 //inicialização
 const precosLivros = [25, 15, 30, 50, 45, 20];
 let menor = 0;
