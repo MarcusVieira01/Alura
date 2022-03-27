@@ -1,6 +1,6 @@
 //Primeiro problema
 //Importação de módulo externo com método require.(local)
-const livros = require('./20220326_02_Exibindo_livros');
+// const livros = require('./20220326_02_Exibindo_livros');
 //
 function menorValor(arrProdutos, inicial){
     //Declaração de variável e atribuição do valor de 
