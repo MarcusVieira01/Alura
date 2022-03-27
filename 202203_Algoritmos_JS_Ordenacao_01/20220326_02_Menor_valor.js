@@ -23,5 +23,5 @@ function menorValor(arrProdutos, inicial){
 // //array de objetos, sendo seu valor o índice do elemento desta
 // //array
 // console.log(`O livro mais barato custa ${livros[menor].preco} e o título é ${livros[menor].titulo}.`);
-//
+//Propriedade module.exports que fará a função menorValor ser acessada externamente
 module.exports = menorValor;
