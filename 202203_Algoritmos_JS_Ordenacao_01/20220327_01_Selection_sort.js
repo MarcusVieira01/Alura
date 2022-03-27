@@ -6,7 +6,7 @@ const menorValor = require('./20220326_02_Menor_valor');
 console.table(livros);
 //Loop for que varrerá o array de objetos livros
 for(let atual = 0; atual < livros.length; atual++){
-    ////Declaração de variáveis que registrarão os dados retornos
+    //Declaração de variáveis que registrarão os dados retornos
     let menor = menorValor(livros, atual);
     let livroAtual = livros[atual];
     let livroMenorPreco = livros[menor];
