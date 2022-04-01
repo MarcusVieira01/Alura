@@ -7,6 +7,7 @@ function mergeSort(array){
     if(array.length > 1){
         //
         const meio = Math.floor(array.length / 2);
+        //Recursivo
         const parte1 = mergeSort(array.slice(0, meio));
         const parte2 = mergeSort(array.slice(meio, array.length));
         //
@@ -41,7 +42,7 @@ function ordena(parte1, parte2){
             posAtualParte2++;
         }
     }
-    //
+    //Operador ternário
     return resultado.concat(posAtualParte1 < parte1.length
     ? parte1.slice(posAtualParte1)
     : parte2.slice(posAtualParte2))
