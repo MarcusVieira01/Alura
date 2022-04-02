@@ -10,7 +10,7 @@ function encontraMenores(pivo, array){
         //Declaração de variável e atribuição do valor do elemento, com índice dado pela
         let prodAtual = array[atual];
         if(prodAtual.preco < pivo.preco){
-            //
+            //Incremento de 1 no valor da variável quantidade menores
             quantidadeMenores++
         }
         //Evocação de função troca Lugar(par)
