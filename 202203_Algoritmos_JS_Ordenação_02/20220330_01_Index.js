@@ -1,4 +1,5 @@
 //Index
+//Realiza o união entre duas listas já pré ordenadas, ordenando os elementos por ordem crescente de valor em um array
 //Declaração de múltiplas variáveis e atribuição do retorno do método require(local) que retorna os arrays do arquivo 20220330_01_Arrays.js
 const { edGalho, edFolha } = require('./20220330_01_Arrays');
 //Declaração de função de ordenação de duas listas passadas via parâmetros
@@ -37,7 +38,7 @@ function juntarListas(lista1, lista2){
     }
     //Loop que continuará a ordenar a lista2 caso seu tamanho seja maior que a variável posAtualLista2
     while(posAtualLista2 < lista2.length){
-        //Atribuição do valor do elemento da lista1 definido pela variável posAtualLista2
+        //Atribuição do valor do elemento da lista2 definido pela variável posAtualLista2
         listaFinal[posAtualListaFinal] = lista2[posAtualLista2];
         //Incremento de 1 no valor das variáveis posAtualLista2 e posAtualListaFinal
         posAtualLista2++;
