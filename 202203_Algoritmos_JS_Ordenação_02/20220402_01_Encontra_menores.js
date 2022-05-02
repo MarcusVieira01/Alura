@@ -29,5 +29,9 @@ function trocaLugar(array, origem, para){
     array[origem] = elem2;
 }
 //Exibição no formato de tabela o conteúdo da variável listaLivros e o retorno do método encontraMenores(par)
-console.table(listaLivros);
-console.table(encontraMenores(listaLivros[2], listaLivros));
+
+//Comentado para não aparecer na execução de 20220430_02_Quick_sort.js
+//console.table(listaLivros);
+//console.table(encontraMenores(listaLivros[2], listaLivros));
+
+module.exports = trocaLugar;
