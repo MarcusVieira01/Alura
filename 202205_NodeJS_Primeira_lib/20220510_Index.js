@@ -37,8 +37,13 @@ async function pegaArquivo(caminhoArquivo){
     } catch(erro){trataErro(erro)};
 };
 
+//Exportação da função pergaArquivo como módulo
+module.exports = pegaArquivo;
+
+
+//COMENTADO PARA UTILIZAÇÃO DE OUTRO EXEMPLO
 //Evoca a função pegaArquivo(path)
-pegaArquivo('./texto.md');
+//pegaArquivo('./texto.md');
 
 //COMENTADO PARA UTILIZAÇÃO DE OUTRO EXEMPLO
 // //Declaração de função que fará a exibição do conteúdo de um arquivo usando método da biblioteca FS de forma assíncrona usando o método promises e usando o método chalk.blue(par) para colorir o texto
