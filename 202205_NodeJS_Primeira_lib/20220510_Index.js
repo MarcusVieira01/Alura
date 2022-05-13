@@ -1,4 +1,4 @@
-//
+//Programa que fará a leitura de um arquivo com extensão markdown, buscará todas as URL que o arquivo possuir, com seus títulos
 //Declaração de variáveis e atribuição do valor de retorno do método require(args) que fará o carregamento dos módulos externos
 const chalk = require('chalk');
 const fs = require('fs');//Módulo File Sistem
@@ -15,8 +15,8 @@ function extraiLinks(texto){
         //O método array.push() coloca um novo elemento no array onde seu parâmetro será dado para criação de um novo objeto
         arrayResultados.push({[temp[1]]: temp[2]});
     };
-    //Retorno do valor da variável arrayResultados via keyword return
-    return arrayResultados;
+    //Retorno do valor da variável arrayResultados via keyword return, usando um condicional ternário para retornar a ausência de links ou retornar o array 
+    return arrayResultados.length === 0 ? 'Não há links.' : arrayResultados;
 };
 
 //Declaração de função que fará o tratamento de erro dentro da função pegaArquivo(args)
@@ -33,13 +33,12 @@ async function pegaArquivo(caminhoArquivo){
         //Decalaração de variável onde será atribído o valor de retorno do métofo fs.promises.readFile(args) de forma assíncrona
         const texto = await fs.promises.readFile(caminhoArquivo, encoding);
         //Exibição do valor da variável texto, colorido via método chalk.green(arg)
-        console.log(extraiLinks(texto));
+        return(extraiLinks(texto));
     } catch(erro){trataErro(erro)};
 };
 
 //Exportação da função pergaArquivo como módulo
 module.exports = pegaArquivo;
-
 
 //COMENTADO PARA UTILIZAÇÃO DE OUTRO EXEMPLO
 //Evoca a função pegaArquivo(path)
