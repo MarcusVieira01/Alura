@@ -18,4 +18,10 @@ describe('pegaArquivo::', () => {
         //Uso do método expect(function) e .toBe(arg) para definir a função que será testada e seu resultado esperado
         expect(result).toEqual(arrayResult);
     });
+    it('Deve retornar mensagem "Não há links"', async() => {
+        //Declaração de cariável com atribuição do retorno da função pegaArquivo(par) com a keyword await para uso da função assíncrona
+        const result = await pegaArquivo('D:/Repositórios/Alura/202205_NodeJS_Primeira_lib/test/arquivos/texto_semlinks.md');
+        //Uso do método expect(function) e .toBe(arg) para definir a função que será testada e seu resultado esperado
+        expect(result).toBe('Não há links.');
+    })
 });
