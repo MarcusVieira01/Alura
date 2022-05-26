@@ -1,0 +1,13 @@
+{
+  "name": "202205_oo_js_inicio",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "20220525_Obj_lit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
