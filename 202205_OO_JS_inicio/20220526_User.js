@@ -1,4 +1,4 @@
-//Exemplo de uso de classes
+//Criação de uma classe e exprotação para uso externo
 
 //Declaração da classe User com exportação para acesso externo
 export default class User{
