@@ -1,4 +1,4 @@
-//Casos de uso do operador new
+//Formas de instanciamento de objetos
 
 //Declaração de função cosntrutora User(args, args) com seus atributos e métodos
 function User(nome, email){
