@@ -11,6 +11,12 @@ function User(nome, email){
         return `${this.nome}, ${this.email}`;
     }
 }
+//Declaração de variável e atribuição de nova instância de objeto via construtor User(arg,arg), via operador new
+const novoUser = new User('Marcus', 'm@m.com');
+//Exibição do valor de retorno do método do objeto novoUser.exibir(infos())
+console.log(novoUser.exibirInfos());
+//Exibição dos elementos e métodos do objeto instanciado a partir da função contrutora User(arg, arg)
+console.table(novoUser);
 
 //Declaração de função costrutora Admin(arg) que herdará os atributos e métodos da construtora User onde os valores de nome e e-mail já fazem parte da função construtora
 function Admin(role){
@@ -19,14 +25,6 @@ function Admin(role){
     //Atribuição do valor de parâmetro ao elemento do objeto a ser instanciado, com um valor padrão caso seja vazio
     this.role = role || 'estudante';
 }
-
-//Declaração de variável e atribuição de nova instância de objeto via construtor User(arg,arg), via operador new
-const novoUser = new User('Marcus', 'm@m.com');
-//Exibição do valor de retorno do método do objeto novoUser.exibir(infos())
-console.log(novoUser.exibirInfos());
-//Exibição dos elementos e métodos do objeto instanciado a partir da função contrutora User(arg, arg)
-console.table(novoUser);
-
 //Criação de objeto via Object.creat(prototype), atribuindo as propriedades deste objeto criado, à propriedade Admin.prototype. Essa é a cadeia de prototipo
 Admin.prototype = Object.create(User.prototype);
 //Declaração de variável e atribuição de nova instância de objeto via construtor Admin(arg), via operador new
