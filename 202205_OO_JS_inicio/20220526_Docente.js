@@ -9,10 +9,11 @@ export default class Docente extends User{
         //Uso da keywordsupper(args) que fará efetvamente a herança dos atributos da superclasse
         super(nome, email, nascimento, role, ativo);
     };
+
     //Método que retornará via keyword return os valores dos atributos estudante, curso e nota via template String
     aprovaEstudante(estudante, curso, nota){
         return `O aluno ${estudante} foi aprovado no curso ${curso} com nota ${nota}!`
-    }
+    };
 };
 //-----COMENTADO PARA PODER USAR EXPORTAÇÂO----
 // //Instanciamento de novo objeto usando a classe Docente e passando os valores dos atributos

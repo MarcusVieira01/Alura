@@ -9,10 +9,16 @@ export default class Admin extends User{
         //Uso da keywordsupper(args) que fará efetvamente a herança dos atributos da superclasse
         super(nome, email, nascimento, role, ativo);
     };
+
+    //Declaração de função pública e uso da keyword return para retorno de uma template string com os valores dos atributos nome, usando polomirfismo sobre a mesma função definida dentro da casse User
+    exibirInfos(){
+        return `Administrador ${this.getNome}`;
+    };
+
     //Método que retornará via keyword return os valores dos atributos nomeCurso e vagas via template String
     adicionarCurso(nomeCurso, vagas){
         return `Curso de ${nomeCurso} criado com ${vagas} vagas!`;
-    }
+    };
 };
 //-----COMENTADO PARA PODER USAR EXPORTAÇÂO----
 // //Instanciamento de novo objeto usando a classe Admin e passando os valores dos atributos
