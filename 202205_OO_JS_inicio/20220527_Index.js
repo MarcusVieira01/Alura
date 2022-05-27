@@ -11,3 +11,12 @@ const novoAdmin = new Admin('Rodrigo', 'r@r.com', '2002-07-30');
 //Evocação do método .exibirInfos() do objeto novoUser e novoAdmin
 console.log(novoUser.exibirInfos());
 console.log(novoAdmin.exibirInfos());
+//Exibição do valor de retorno da função getter nome do objeto novoAdmin 
+console.log(novoAdmin.getNome);
+//Chamada da função getter alteraNome(arg) e exibição do valor de retorno da função getter pegaNome, do objeto novoAdmin 
+novoAdmin.alteraNome = 'André';
+console.log(novoAdmin.getNome);
+
+//-----Comentado pois é apenas um teste de caso-----
+// novoAdmin.setNome = '';
+// console.log(novoAdmin.getNome);
