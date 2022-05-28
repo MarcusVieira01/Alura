@@ -1,3 +1,9 @@
 # Alura
 
-Arquivos com as lógicas das aulas sobre Programação, obtidas pela entidade Alura
+Arquivos com as lógicas das aulas obtidas na entidade Alura
+
+Linguagens:
+
+- JS;
+- HTML5;
+- CSS3;
