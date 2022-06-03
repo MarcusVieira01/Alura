@@ -1,0 +1,50 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url("./images/smoke-g4ac8e6f78_1920.jpg");
+    color: #FFF8DC;
+    font-family: 'garamond';
+    text-align: center;
+}
+
+.titulo{
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+#solicitacao{
+    font-size: 20px;
+}
+
+#valorInput{
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+#botao{
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+#f, #k, #r{
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.descricao{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 16px;
+}
+
+#rodape{
+    margin: 16px 0px 8px 0px;
+}
+
+#github, #instagram{
+    color: #FFF8DC;
+}
