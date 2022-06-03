@@ -1,4 +1,4 @@
-//Script para resposta da chamada pelo arquivo index.html via onclick
+//Script para resposta da chamada pelo arquivo index.html via onclick para conversão de moedas
 
 //Declaração de função que será chamada pela propriedade onclick no arquivo index.html
 function converter(){
