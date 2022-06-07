@@ -1,0 +1,8 @@
+body{
+    background-color: cornflowerblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#km, #anoLuz{
+    font-weight: bold;
+}
