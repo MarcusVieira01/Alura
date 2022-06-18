@@ -1,6 +1,6 @@
 # Alura
 
-Arquivos com as lógicas das aulas obtidas na entidade Alura.
+Arquivos com as lógicas das aulas e imersão obtidas na entidade Alura.
 
 Linguagens:
 
