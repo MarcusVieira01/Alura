@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+        <title>Conversor de Moedas</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="tituloPrincipal">
+                Conversor de moedas - USD, EUR e BTC em BRL
+            </h1>
+        </header>
+
+        <hr>
+
+        <p id="objetivo">
+            Este conversor de moedas existe para aplicar os conhecimentos adquiridos na <b>Imersão DEV 4</b> da escola <b>Alura</b>, onde é parte da <b>Aula 5 - Desafio 4</b>. Esta aplicação é uma variação da aplicação ensinada na <b>Aula 2</b>, onde é solicitado que o usuário escolha as moedas a serem convertidas. Na implementaçãoa anterior não havia essa possibilidade.
+        </p>
+
+        <form>
+            <label for="valorInput" id="tituloValorInput">Insira o valor:</label>
+            <input type="number" id="valorInput">
+
+            <br><br>
+
+            <label for="valorInput" id="solicitacaoMoeda">Qual moeda?</label>
+
+            <input type="radio" id="dollarIn" value="dollar" name="from">
+                <label for="dollarIN">Dollar</label>
+            <input type="radio" id="euroIn" value="euro" name="from">
+                <label for="euroIn">Euro</label>
+            <input type="radio" id="btcIn" value="btc" name="from">
+                <label for="btcIN">Bitcoin</label>
+                
+            <br><br>
+            
+            <button type="button" onclick="converte()" id="botaoConverte">Converte</button>
+            
+            <br><br>
+
+            <label for="valorOutput" id="tituloValorOutput">Resultado da conversão: <b>R$</b></label>
+            <input type="number" id="valorOutput" readonly>
+            
+            <br><br>
+
+            <button type="button" onclick="limpa()" id="botaoLimpa">Nova Conversão</button>
+            
+            <br><br>
+            
+            <div id="dataHora"></div>
+        </form>
+    </body>
+
+    <hr>
+
+    <footer class="rodape">
+        <label id="by">By 2MV</label>
+
+        <a href="https://github.com/MarcusVieira01" target="blank">
+            <img src="https://pngimg.com/uploads/github/github_PNG58.png" id="github">
+        </a>
+
+        <a href="https://www.instagram.com/marcusv.m.vieira/" target="blank">
+            <img src='https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-fundo-transparente2.png?resize=696%2C696&ssl=1' id="instagram">
+        </a>
+    </footer>
+</html>
