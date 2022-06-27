@@ -1,4 +1,4 @@
-//
+//Script que insere e exclui a imagem, dado por uma url, e o nome
 
 /*Função que captura trechos de código HTML do arquivo index.html, valida o input da URL e trata conforme caso: 
 1. Injeta o valor do input do usuário, pós tratamento, noa rquivo index.html; 
