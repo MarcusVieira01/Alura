@@ -3,7 +3,7 @@ public class Variavel_float_double {
         //Declaração de variável e atribuição de valor inicial
         int numeroB = 2;
         double numeroA = 5;
-        float salarioFloat = (float)6525.8; //A conversão para float, mesmo declarando como float foi exigência do Java 18
+        float salarioFloat = (float)6525.8; //Casting de um double para float
         double salarioDouble = 9852.36;
         double resultado = numeroA / numeroB;
 
