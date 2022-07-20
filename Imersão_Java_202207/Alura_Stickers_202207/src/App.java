@@ -4,6 +4,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.List;
+import java.util.Map;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -20,15 +23,26 @@ public class App {
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         //Atribuição do corpo do conteúdo da resposta à variável body
         String body = response.body();
-        //Exibição no console do valor da variável body
-        System.out.println(body);
+        //Exibição no console do valor da variável body DEBUG
+        //System.out.println(body);
 
         //Extrair (parsear) os dados relevantes (título, imagem, classificação)
-
-
-        
+        //Instanciamento de objeto da classe jsonParse
+        JasonParser parser = new JasonParser();
+        //Usando uma classe externa, serão separados is itens e valores do conteúdo da variávem body
+        List<Map<String, String>> listaFilmes = parser.parse(body);
+        //Exibição do valor de retorno do método nome_lista.size DEBUG
+        //System.out.println(listaFilmes.size());
+        //Retorno do valor de um elemento específico utilizando método get(index) DEBUG
+        //System.out.println(listaFilmes.get(0));
 
         //Manipular e exibir os dados
-
+        //Declaração de loop for, no template forEach, para exibição de cada valor de chava selecionada
+        for (Map<String,String> filme : listaFilmes) {
+            System.out.println(filme.get("title"));
+            System.out.println(filme.get("image"));
+            System.out.println(filme.get("imDbRating"));
+            System.out.println();
+        }
     }
 }
