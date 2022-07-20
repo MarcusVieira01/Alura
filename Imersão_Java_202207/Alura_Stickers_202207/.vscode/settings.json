@@ -4,10 +4,7 @@
     "java.project.referencedLibraries": {
         "include": [
             "lib/**/*.jar",
-            "c:\\Users\\marcu\\Downloads\\jar_files/**/*.jar",
-            "jar_files/jackson-annotations-2.13.3.jar",
-            "jar_files/jackson-core-2.13.3.jar",
-            "jar_files/jackson-databind-2.13.3.jar"
+            "c:\\Users\\marcu\\Downloads\\jar_files/**/*.jar"
         ],
         "exclude": [
             "c:\\Users\\marcu\\Downloads\\jar_files\\jackson-annotations-2.13.3.jar",
