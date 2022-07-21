@@ -1,5 +1,7 @@
 //Importação das bibliotecas externas
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -35,13 +37,28 @@ public class App {
         //System.out.println(listaFilmes.size());
         //Retorno do valor de um elemento específico utilizando método get(index) DEBUG
         //System.out.println(listaFilmes.get(0));
-
+        
         //Manipular e exibir os dados
-        //Declaração de loop for, no template forEach, para exibição de cada valor de chava selecionada
+        //Instanciamento de novo objeto advindo da classe GeradoraFigurinha
+        var gerador = new GeradoraFigurinha();
+
+        //Declaração de loop for, no template forEach, para exibição de cada valor de chaveselecionada
         for (Map<String,String> filme : listaFilmes) {
+            //Declaração de variável e atribuição do valor de retorno do método .get(key) do objeto filme, sendo a URL da imagem fornecida pela API IMbD
+            String urlImagem = filme.get("image");
+            //Declaração de variável e atribuição do valor de retorno do método .get(key) do objeto filme, sendo o título do filme fornecido pela API IMbD
+            String titulo = filme.get("title");
+            //Declaração de variável que receberá a concatenação do conteúdo da variável titulo e a String
+            String nomeArquivo = "D:/Repositórios/Alura/Imersão_Java_202207/Alura_Stickers_202207/saida/" + titulo + ".png";
+            
+            //Instanciamento de novo objeto advindo da classe URL com o conteúdo da variável urlImagem como endereço de localização da imagem e por se tratar de um InputStream, há necessidade de abertura do stream via método .opneStream
+            InputStream inputStream = new URL(urlImagem).openStream();
+            //Evocação do método .gerar do objeto gerador com o conteúdo da variável inputStream e a localização da saída do arquivo via String
+            gerador.gerar(inputStream, nomeArquivo);
+
             System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
-            System.out.println(filme.get("imDbRating"));
+            //System.out.println(filme.get("image"));
+            //System.out.println(filme.get("imDbRating"));
             System.out.println();
         }
     }
