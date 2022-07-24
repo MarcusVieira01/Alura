@@ -40,7 +40,7 @@ public class GeradoraFigurinha {
 
         //Configurar fonte de texto
         //Instanciamento de novo objeto advindo da classe Font com arguntentos de configuração
-        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
+        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 32);
         //Evocação do método .setFont do objeto graphics, com argumento o objeto anterior instanciado, 
         graphics.setFont(fonte);
         //Evocação do método .setColor do objeto graphics, com argumento sendo a cor da fonte 
@@ -48,7 +48,7 @@ public class GeradoraFigurinha {
 
         //Frase na imagem
         //Evocação do método drawString, do objeto graphics
-        graphics.drawString("TOPZERA", 185, novaAltura - 80);
+        graphics.drawString("TOPZERA", 100, novaAltura - 100);
 
         //Escrever a nova imagem em um arquivo
         //Evocação do método da classe ImageIO fazendo que o conteúdo da variável nova imagem seja arquivado no path selecionado e com o formato especificado
