@@ -11,18 +11,22 @@ public class App {
         //String url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
 
         //Declaração de variável com a URL de acesso HTTP à API APOD da Nasa. Uso do alternativo apenas por estar pronto
-        //String url = "hhttps://api.mocki.io/v2/549a5d8b/NASA-APOD";
+        String url = "hhttps://api.mocki.io/v2/549a5d8b/NASA-APOD";
 
-        //Conexão e atribuição do retorno do acesso HTTP
+        //*Conexão e atribuição do retorno do acesso HTTP
         //Instanciamento de novo objeto advindo ca classe ClienteHttp
         var http = new ClienteHttp();
         //Declaração de variável e atribuição do valor de retorno do método buscaDados(arg), com o valor da variável URL como argumento e atribuindo 
         String json = http.buscaDados(url);
 
-        //Extrair (parsear) os dados relevantes (título, imagem, classificação)
+        //*Extrair (parsear) os dados relevantes (título, imagem)
+        //
+        ExtratorConteudoNasa extrator = new ExtratorConteudoNasa();
+        //
+        extrator.extraiConteudo(json);
 
 
-        //Manipular e exibir os dados
+        //*Manipular e exibir os dados
         //Instanciamento de novo objeto advindo da classe GeradoraFigurinha
         var gerador = new GeradoraFigurinha();
 
