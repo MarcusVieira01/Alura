@@ -1,0 +1,20 @@
+{
+  "name": "202205_nodejs_primeira_lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "20220510_Index.js",
+  "scripts": {
+    "test": "jest ./test",
+    "cli": "node cli.js ./texto.md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
