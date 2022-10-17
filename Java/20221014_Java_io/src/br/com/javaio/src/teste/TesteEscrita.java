@@ -1,5 +1,5 @@
 //Declaração de pacote
-package br.com.javaio.src.teste;//TESTEEEEEEEEEEEEEEEEEE
+package br.com.javaio.src.teste;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
