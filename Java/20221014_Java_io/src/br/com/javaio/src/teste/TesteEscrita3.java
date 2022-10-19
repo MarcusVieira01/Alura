@@ -8,6 +8,9 @@ import java.io.PrintStream;
 public class TesteEscrita3 {
     //Declaração de método principal
     public static void main(String[] args) throws IOException {
+        //Declaração de variável e atribuição de retorno do método .currentTimeMillis()
+        long inicio = System.currentTimeMillis();
+
         //Fluxo de entrada com arquivo
         //Instanciação de objeto via construtor PrintStream e atribuição de sua refencia à variável ps de tipo PrintStream
         PrintStream ps = new PrintStream("lorem3.txt");
@@ -20,5 +23,14 @@ public class TesteEscrita3 {
 
         //Fechamento do acesso ao objeto de referência contida na variável ps
         ps.close();
+        
+        //Declaração de variável e atribuição de retorno do método .currentTimeMillis()
+        long fim = System.currentTimeMillis();
+
+        //Declaração de variável e atribuição do valor de resultado da expressão matemática
+        double delta = fim - inicio;
+
+        //
+        System.out.println("Demorou " + delta + " milisegundos para o código executar.");
     }
 }
