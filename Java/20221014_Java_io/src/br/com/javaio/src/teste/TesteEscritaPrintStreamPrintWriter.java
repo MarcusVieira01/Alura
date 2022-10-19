@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 //Declaração de classe primária
-public class TesteEscrita3 {
+public class TesteEscritaPrintStreamPrintWriter {
     //Declaração de método principal
     public static void main(String[] args) throws IOException {
         //Declaração de variável e atribuição de retorno do método .currentTimeMillis()
