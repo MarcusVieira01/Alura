@@ -1,6 +1,3 @@
-lorem.txt
-lorem2.txt
-lorem3.txt
-loremCopiado.txt
-loremEscrito.txt
-teclado.txt
+#Serão ignorados todos arquivos .txt
+*.txt
+
