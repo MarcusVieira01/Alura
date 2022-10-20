@@ -31,20 +31,26 @@ public class TesteLeituraCSVParser {
             //Evocação do método .useDelimiter(pattern) que seccionará o objeto pelo padrão de delimitação declarado
             linhaScanner.useLocale(Locale.US);
             linhaScanner.useDelimiter(",");
-            //Atribuição de valor de retorno do método .next() que fará o acesso à próxima linha do objeto
-            String valorStr = linhaScanner.next();
-            int valorInt = linhaScanner.nextInt();
-            int valorInt2 = linhaScanner.nextInt();
+            //Atribuição de valor de retorno do método .next() que fará o acesso à próximo elemento do objeto
+            String tipo = linhaScanner.next();
+            int agencia = linhaScanner.nextInt();
+            int conta = linhaScanner.nextInt();
             String nome = linhaScanner.next();
-            double valorDoub = linhaScanner.nextDouble();
+            double saldo = linhaScanner.nextDouble();
+            //Atribuição à variável saidaFormatada do valor de retorno do método da classe String .format(formato, valores) que fará a formatação da saída. No caso, dentro do formato é usado %s (representa string) %d (represeta decimal inteiro) e %f (representa float). No caso dos inteiros, temos o incremento 04 e 08 onde será definido com 0 os caracteres vazios até completar 4 e 8 caracteres totais. No caso do float, temos o arredondamento do valor para .2 (duas casas decimais) 
+            String saidaFormatada = String.format(new Locale("pt", "BR"), 
+            "Tipo: %s | Conta:%04d | Agencia: %08d | Titular: %s | Saldo: %.2f", tipo, agencia, conta, nome, saldo);
+            //Exibição do valor atribuído à variável saidaFormatada
+            System.out.println(saidaFormatada);
             //Uso de método para realizar o fechamento do acesso ao objeto linhaScanner
             linhaScanner.close();
-            //Exibição concatenada do valor atribuído à variável valor
-            System.out.println("O valor do elemento 0 e: " + valorStr);
-            System.out.println("O valor do elemento 1 e: " + valorInt);
-            System.out.println("O valor do elemento 2 e: " + valorInt2);
-            System.out.println("O valor do elemento 3 e: " + nome);
-            System.out.println("O valor do elemento 4 e: " + valorDoub);
+            //COMENTADO PARA IMPLEMENTAÇÂO DA FORMAÇÂO VIA String.format(formato, args)
+            // //Exibição concatenada do valor atribuído à variável valor
+            // System.out.println("O valor do elemento 0 e: " + valorStr);
+            // System.out.println("O valor do elemento 1 e: " + valorInt);
+            // System.out.println("O valor do elemento 2 e: " + valorInt2);
+            // System.out.println("O valor do elemento 3 e: " + nome);
+            // System.out.println("O valor do elemento 4 e: " + valorDoub);
         }
 
         //Uso de método para fechamento do acesso ao objeto contido na referência scanner
