@@ -2,6 +2,7 @@
 package br.com.javaio.src.teste;
 //Importação de classes externas
 import java.io.File;
+import java.util.Locale;
 //import java.util.Arrays; //COMENTADO PARA IMPLEMENTAÇÂO VIA SCANNER
 import java.util.Scanner;
 
@@ -26,16 +27,24 @@ public class TesteLeituraCSVParser {
 
             //Instanciação de objeto da classe Scanner via construtor que recebe uma String source e com referência atribuída à variável linhaScanner do tipo Scanner
             Scanner linhaScanner = new Scanner(linha);
-            //evocação do método .useDelimiter(pattern) que seccionará o objeto pelo padrão de delimitação declarado
+            //Evocação do método .useLocale(locale) que fará as regras de decimais serem seguidas como a declaração e não pelo SO
+            //Evocação do método .useDelimiter(pattern) que seccionará o objeto pelo padrão de delimitação declarado
+            linhaScanner.useLocale(Locale.US);
             linhaScanner.useDelimiter(",");
             //Atribuição de valor de retorno do método .next() que fará o acesso à próxima linha do objeto
             String valorStr = linhaScanner.next();
             int valorInt = linhaScanner.nextInt();
+            int valorInt2 = linhaScanner.nextInt();
+            String nome = linhaScanner.next();
+            double valorDoub = linhaScanner.nextDouble();
             //Uso de método para realizar o fechamento do acesso ao objeto linhaScanner
             linhaScanner.close();
             //Exibição concatenada do valor atribuído à variável valor
             System.out.println("O valor do elemento 0 e: " + valorStr);
             System.out.println("O valor do elemento 1 e: " + valorInt);
+            System.out.println("O valor do elemento 2 e: " + valorInt2);
+            System.out.println("O valor do elemento 3 e: " + nome);
+            System.out.println("O valor do elemento 4 e: " + valorDoub);
         }
 
         //Uso de método para fechamento do acesso ao objeto contido na referência scanner
