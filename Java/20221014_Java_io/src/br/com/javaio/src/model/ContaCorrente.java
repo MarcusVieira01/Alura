@@ -3,7 +3,7 @@ package br.com.javaio.src.model;
 //Declaração de classe primária
 public class ContaCorrente implements java.io.Serializable{
     //Declaração de atributos privados
-    //private transient Cliente titular; //COMENTADO PARA REMOVER A DEMONSTRAÇÂO DA NÃO SERIALIZAÇÃO DESSE ATRIBUTO
+    //private transient Cliente titular; //COMENTADO PARA REMOVER A DEMONSTRAÇÂO DA NÃO SERIALIZAÇÃO DESSE 
     private Cliente titular;
     private int conta;
     private int agencia;
