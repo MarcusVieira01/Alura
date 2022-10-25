@@ -76,4 +76,9 @@ public class Curso {
     public void matricula(Aluno aluno) {
         this.alunos.add(aluno);
     }
+
+    //Declaração de método que recebe um objeto Aluno e retorna se consta dentro do objeto referido via método .contains()
+    public boolean estaMatriculado(Aluno aluno) {
+        return this.alunos.contains(aluno);
+    }
 }

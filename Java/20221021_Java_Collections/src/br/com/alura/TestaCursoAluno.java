@@ -12,7 +12,7 @@ public class TestaCursoAluno {
         javaColecao.adiciona(new Aula("Trabalhando com ArrayList", 21));
         javaColecao.adiciona(new Aula("Modelando com coleções", 18));
 
-        //INstanciamento de objetos via construtor Aluno coma tribuição de suas referências às variáveis declaradas de tipo Aluno
+        //Instanciamento de objetos via construtor Aluno coma tribuição de suas referências às variáveis declaradas de tipo Aluno
         Aluno a1 = new Aluno("Rodrigo Turini", 34672);
         Aluno a2 = new Aluno("Guilherme Silveira", 34673);
         Aluno a3 = new Aluno("Maurício Aniche", 346747);
@@ -29,5 +29,17 @@ public class TestaCursoAluno {
         javaColecao.getAlunos().forEach(a -> {
             System.out.println(a);
         });
+
+        //Exibição do valor de retorno do método.estaMatriculado(obj) que retornará um boleano para cada caso, se consta no objeto evocado ou não
+        System.out.println("O aluno a1 está matriculado? " + javaColecao.estaMatriculado(a1));
+
+        //Instanciação de objeto via construtor Aluno(args) e atribuição de sua referência à variável declarada do tipo aluno
+        Aluno turini = new Aluno("Rodrigo Turini", 34672);
+
+        //Exibição do valor de retorno do método.estaMatriculado(obj) que retornará um boleano para cada caso, se consta no objeto evocado ou não
+        System.out.println("O turini está matriculado?" + javaColecao.estaMatriculado(turini));
+
+        //Exibição do retorno do método .equals()
+        System.out.println("a1 equals turini?" + a1.equals(turini));
     }
 }
