@@ -38,9 +38,28 @@ public class Curso {
         this.aulas = aulas;
     }
 
+    //Sobrescrita do método toString
+    @Override
+    public String toString() {
+        return "Curso nome=" + nome + ", instrutor=" + instrutor + ", aulas=" + aulas;
+    }
+
     //Declaração de método que fará adilção de um a Aula à lista de aulas
     public void adiciona(Aula aula){
         //Evocação de método que fará a adição de elemento à lista aulas
         this.aulas.add(aula);
+    }
+
+    //Declaração de método que retornará um int sendo o total da somatória dos atributos tempo dos elementos do objeto
+    public int getTempoTotal(){
+        //Decalração de variável e inicialização de valor
+        int tempoTotal = 0;
+        //Template foreach que iterará o atributo aulas via variável temporária aula do tipo Aula
+        for (Aula aula : aulas) {
+            //Incremento do valor de retorno ao valor da variável tempoTotal
+            tempoTotal += aula.getTempo();
+        }
+        //Retorno do valor da variável tempoTotal
+        return tempoTotal;
     }
 }
