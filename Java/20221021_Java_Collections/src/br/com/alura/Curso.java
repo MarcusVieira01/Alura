@@ -3,8 +3,11 @@ package br.com.alura;
 //Importação de classe externa
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 //Declaração de classe primária
@@ -14,6 +17,7 @@ public class Curso {
     private String instrutor;
     private List<Aula> aulas = new ArrayList<Aula>();
     private Set<Aluno> alunos = new HashSet<>();
+    private Map<Integer, Aluno> matriculaAluno = new HashMap<>();
 
     //Declaração de construtor
     public Curso(String nome, String instrutor) {
@@ -72,13 +76,28 @@ public class Curso {
         return tempoTotal;
     }
 
-    //Declaração de método que recebe um objeto Aluno e inclui como elemento do objeto alunos
+    //Declaração de método que recebe um objeto Aluno e inclui como elemento do objeto alunos assim como evoca o método .put(key, value) do atributo metriculaAulno sendo que é um Map do tipo HasMap;
     public void matricula(Aluno aluno) {
         this.alunos.add(aluno);
+        this.matriculaAluno.put(aluno.getMatrícula(), aluno);
     }
 
     //Declaração de método que recebe um objeto Aluno e retorna se consta dentro do objeto referido via método .contains()
     public boolean estaMatriculado(Aluno aluno) {
         return this.alunos.contains(aluno);
     }
+
+    //Declaração de método que recebe a matrícula do aluno e retorna qual seu nome
+    public Aluno buscaMatricula(int numero) {
+        //
+        for (Aluno aluno : alunos) {
+            if(aluno.getMatrícula() == numero){
+                return aluno;
+            }
+        }
+        //Lançamento de excessão para evitar o retorno de null. É BOA PRÁTICA EVITAR OS NULLs
+        throw new NoSuchElementException("Matrícula" + numero + "não encontrada!");
+    }
+
+    
 }
