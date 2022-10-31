@@ -89,15 +89,12 @@ public class Curso {
 
     //Declaração de método que recebe a matrícula do aluno e retorna qual seu nome
     public Aluno buscaMatricula(int numero) {
-        //
-        for (Aluno aluno : alunos) {
-            if(aluno.getMatrícula() == numero){
-                return aluno;
-            }
+        //Condicional que se true, lança exceção e se false retorna o valor de retorno do método .get(key)
+        if(!matriculaAluno.containsKey(numero)){
+            throw new NoSuchElementException("Não existe o aluno com matrícula " + numero);
+        }else{
+            //Uso do retorno do método .get(key) para retornar o objeto aluno que possui a chave de mapeamento específica 
+            return matriculaAluno.get(numero);
         }
-        //Lançamento de excessão para evitar o retorno de null. É BOA PRÁTICA EVITAR OS NULLs
-        throw new NoSuchElementException("Matrícula" + numero + "não encontrada!");
     }
-
-    
 }

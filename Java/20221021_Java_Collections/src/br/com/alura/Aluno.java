@@ -5,7 +5,7 @@ public class Aluno {
     //Declaração de atributos
     private String nome;
     private int matrícula;
-
+    
     //Declaração de construtor
     public Aluno(String nome, int matrícula) {
         if(nome == null){
@@ -13,6 +13,14 @@ public class Aluno {
         }
         this.nome = nome;
         this.matrícula = matrícula;
+    }
+    
+    //Declaração de métodos getter
+    public String getNome() {
+        return nome;
+    }
+    public int getMatrícula() {
+        return matrícula;
     }
 
     //Sobreescrita do método toString()
@@ -35,4 +43,7 @@ public class Aluno {
     public int hashCode(){
         return this.nome.hashCode();
     }
+
+
+
 }
