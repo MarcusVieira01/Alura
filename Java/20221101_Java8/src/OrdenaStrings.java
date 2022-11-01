@@ -31,8 +31,14 @@ public class OrdenaStrings {
         //Exibição do conteúdo do objeto de referência atribuída à variável passada como argumento
         System.out.println(palavras);
 
-        //Declaração de variável e atribuição da referência do objeto instanciado via construtor ImprimeLinha(), que implementa a interface Consumer
-        Consumer<String> consumidor = new ImprimeLinha();
+        //Declaração de variável e atribuição da referência do objeto instanciado via declaração de classe anonima (mais comum quando a implementação é simples e não será reaproveitada no código), que implementa a interface Consumer
+        Consumer<String> consumidor = new Consumer<String>(){
+            //Sobreescrita de método obrigatório, com a lógica que desejamos
+                @Override
+                public void accept(String s) {
+                    System.out.println(s);        
+                }
+        };
 
         //Evocação de método .forEach(consumer) do objeto de referência armazenada na variável palavras
         palavras.forEach(consumidor);
@@ -55,12 +61,12 @@ class ComparadorTamanho implements Comparator<String>{
     }
 }
 
-//Declaração de classe auxiliar
-class ImprimeLinha implements Consumer<String>{
-    //Sobreescrita de método obrigatório, com a lógica que desejamos
-    @Override
-    public void accept(String t) {
-        System.out.println(t);        
-    }
-}
+// //Declaração de classe auxiliar
+// class ImprimeLinha implements Consumer<String>{
+//     //Sobreescrita de método obrigatório, com a lógica que desejamos
+//     @Override
+//     public void accept(String t) {
+//         System.out.println(t);        
+//     }
+// }
 
