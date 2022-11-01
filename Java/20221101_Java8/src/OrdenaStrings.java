@@ -1,9 +1,6 @@
 //Inportação de classes externas
 import java.util.ArrayList;
-//import java.util.Collections;//COMENTADO PARA QUE SEJA SUPRIMIDO O WARNING
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
 //Declaração de classe principal
 public class OrdenaStrings {
@@ -18,52 +15,24 @@ public class OrdenaStrings {
         palavras.add("Casa do Código");
         palavras.add("Caelum");
 
-        //Declaração de variável do tipo Comparator<type> e atribuição da referência do objeto isntanciado via construtor ComparadorTamanho()
-        Comparator<String> comparador = new ComparadorTamanho();
-
-        //MODO ANTIGO PARA REALIZAR ORDENAÇÃ
+        //MODO ANTIGO PARA REALIZAR ORDENAÇÃO
         //Evocação de método .sort(obj), que consta na classe auxiliar Collections, que fará a ordenação lexográfica (alfabética)
         //Collections.sort(palavras, comparador);
 
-        //Evocação do método .sort(arg) via a variável que possui a referência do objeto palavras, sem acesso á classe auxiliar Collections
-        palavras.sort(comparador);
+        //Evocação do método .sort(arg) via a variável que possui a referência do objeto palavras, sem acesso á classe auxiliar Collections e implementando a interface Comparator via lâmbda. Evocação do método .compare(args) da classe wrapper Integer, que fará a comparação dos retornos dos métodos .length() e retornará -1 caso s2 seja maior, 1 caso s1 seja maior e 0 caso sejam iguais
+        palavras.sort((s1, s2) -> {
+            return Integer.compare(s1.length(), s2.length());
+        });
         
         //Exibição do conteúdo do objeto de referência atribuída à variável passada como argumento
         System.out.println(palavras);
 
-        //Evocação de método .forEach(consumer) do objeto de referência armazenada na variável palavras onde o objeto é instanciado via declaração de classe anonima (mais comum quando a implementação é simples e não será reaproveitada no código), que implementa a interface Consumer.
-        palavras.forEach(new Consumer<String>(){
-            //Sobreescrita de método obrigatório, com a lógica que desejamos
-                @Override
-                public void accept(String s) {
-                    System.out.println(s);        
-                }
+        //Evocação de método .forEach(consumer) do objeto de referência armazenada na variável palavras onde é passado um LAMBDA de uma interface que, como o método .forEach orbigatóriamente precisa receber um Consumer, sua implementão é implícita. LAMBDA COMPLETO
+        palavras.forEach((String s) -> {
+            System.out.println(s);
         });
+
+        //Evocação de método .forEach(consumer) do objeto de referência armazenada na variável palavras onde é passado um LAMBDA de uma interface que, como o método .forEach orbigatóriamente precisa receber um Consumer, sua implementão é implícita. LAMBDA sem as partes opcionais por ter apenas uma variável e um statement
+        palavras.forEach(s -> System.out.println(s));
     }   
 }
-
-//Declaração de classe auxiliar
-class ComparadorTamanho implements Comparator<String>{
-    //Sobreescrita do método compare para definir a forma de comparação customizada
-    @Override
-    public int compare(String s1, String s2) {
-        //Cadeia de condicionais que em cada caso de comparação do tamanho das strings, será retornado um número pertinente
-        if(s1.length() < s2.length()){
-            return -1;
-        }
-        if(s1.length() > s2.length()){
-            return 1;
-        }
-        return 0;        
-    }
-}
-
-// //Declaração de classe auxiliar
-// class ImprimeLinha implements Consumer<String>{
-//     //Sobreescrita de método obrigatório, com a lógica que desejamos
-//     @Override
-//     public void accept(String t) {
-//         System.out.println(t);        
-//     }
-// }
-
