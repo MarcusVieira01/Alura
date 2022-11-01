@@ -26,8 +26,12 @@ public class OrdenaStrings {
         //     return Integer.compare(s1.length(), s2.length());
         // });
 
+        //COMENTADO PARA PODER IMPLEMENTAR A LINHA ABAIXO
         //Código similar com o acima, porém usando factoring. Evocação do método .sort(arg) via a variável que possui a referência do objeto palavras. É passado como parâmetro o retorno do método .comparing da classe Comparator. Esse método recebe um lambda como parâmetro
-        palavras.sort(Comparator.comparing(s -> s.length()));
+        // palavras.sort(Comparator.comparing(s -> s.length()));
+
+        //Código similar com o acima, porém ao invés de usarmos um lambda usamos o method reference declarando a classe a acessar e o método usando :: para separar 
+        palavras.sort(Comparator.comparing(String::length));
         
         //Exibição do conteúdo do objeto de referência atribuída à variável passada como argumento
         System.out.println(palavras);
@@ -37,7 +41,11 @@ public class OrdenaStrings {
             System.out.println(s);
         });
 
+        //SIMILAR COM O CÓDIGO ACIMA
         //Evocação de método .forEach(consumer) do objeto de referência armazenada na variável palavras onde é passado um LAMBDA de uma interface que, como o método .forEach orbigatóriamente precisa receber um Consumer, sua implementão é implícita. LAMBDA sem as partes opcionais por ter apenas uma variável e um statement
         palavras.forEach(s -> System.out.println(s));
+
+        //Código similar com o acima, porém ao invés de usarmos um lambda usamos o method reference declarando a classe a acessar e o método usando :: para separar
+        palavras.forEach(System.out::println);
     }   
 }
