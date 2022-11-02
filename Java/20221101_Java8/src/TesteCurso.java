@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 //Declaração de classe primária
 public class TesteCurso {
@@ -42,5 +44,40 @@ public class TesteCurso {
 
         //Exibição concatenada do valor da variável soma
         System.out.println("O total de alunos é " + soma);
+
+        //Exibição de separação
+        System.out.println("--------------------------------");
+
+        //Aninhamento de métodos que, em resumo, fará a filtragem de objetos da classe Curso que possuirem o valor do atributo alunos maior que 100, será evocado o método .findAny() que retornará qualquer elemento da filtragem e após será evoado o método .ifPresent(consumer) que se houver um elemento retornado eplo método .findAny(), será executado o consumer
+        cursos.stream().filter(c -> c.getAlunos() >= 100).findAny().ifPresent(System.out::println);
+
+        //Exibição de separação
+        System.out.println("--------------------------------");
+
+        //Declaração de variável lista onde cada elemento será a referência de um objeto retornado pelo aninhamento dos métodos .filter(predicate), que filtrará os objetos com o valor do atributo alunos maior que 100, e o método .collect(collector) que recebe como argumento o método .toList() da classe Collectors. Esse método captura cada objeto retornado pelo método .filter(predicate) e insere em uma lista. Essa é a variável declarada
+        List<Curso> coletado = cursos.stream().filter(c -> c.getAlunos() >= 100).collect(Collectors.toList());
+
+        //Exibição do conteúdo da vaiável coletado
+        System.out.println(coletado);
+
+        //Exibição de separação
+        System.out.println("--------------------------------");
+
+        //Concatenação de métodos onde .filter(predicate), que filtrará os objetos com o valor do atributo alunos maior que 100, .collect(collecteor) recebe o método da classe Collectos .toMap(key_function, value_function) que recebe dois method reference para gerar a chave-valor do mapa onde seu retorno é atribuído à variável mapaCursoAlunos, declarada como classe Map e tipo String(chave) e Integer(valor)
+        Map<String, Integer> mapaCursoAlunos = cursos.stream().filter(c -> c.getAlunos() >= 100)
+        .collect(Collectors.toMap(Curso::getNome, Curso::getAlunos));
+
+        //Exibição do valor da variável mapaCursoAlunos
+        System.out.println(mapaCursoAlunos);
+
+        //Exibição de separação
+        System.out.println("--------------------------------");
+
+        //Concatenação de métodos onde .filter(predicate), que filtrará os objetos com o valor do atributo alunos maior que 100, .collect(collecteor) recebe o método da classe Collectos .toMap(key_function, value_function) que recebe dois method reference para gerar a chave-valor do mapa. É evocado o método .forEach(biconsumer) que recebe um biconsumer para a chave e valor além da ação. Ação no caso a exibição concatenada dos valores do par chave-valor nome e aluno
+        cursos.stream().filter(c -> c.getAlunos() >= 100).collect(Collectors.toMap(Curso::getNome, Curso::getAlunos))
+        .forEach((nome, alunos) -> System.out.println("O curso " + nome + " tem " + alunos + " alunos matriculados"));
+        
+        //Exibição de separação
+        System.out.println("--------------------------------");
     }
 }
