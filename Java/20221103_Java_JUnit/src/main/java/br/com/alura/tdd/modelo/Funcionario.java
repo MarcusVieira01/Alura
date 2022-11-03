@@ -1,4 +1,4 @@
-package main.java.br.com.alura.tdd.modelo;
+package br.com.alura.tdd.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
