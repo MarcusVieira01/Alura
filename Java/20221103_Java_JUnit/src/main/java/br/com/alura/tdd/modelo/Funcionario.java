@@ -3,6 +3,7 @@
 package br.com.alura.tdd.modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Funcionario {
@@ -28,5 +29,8 @@ public class Funcionario {
 	public BigDecimal getSalario() {
 		return salario;
 	}
-
+	//Declaração de método com a funcionalidade de alterar o valor do atributo salário do objeto instanciado
+    public void reajuste(BigDecimal reajuste) {
+		this.salario = this.salario.add(reajuste).setScale(2, RoundingMode.HALF_UP);//Arredondamento via método da classe BigDecimal
+    }
 }
