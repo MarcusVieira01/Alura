@@ -42,7 +42,7 @@ public class ReajusteServiceTest {
 
     //Declaração de método de teste para realiste com desempenho excelente
     @Test
-    public void reajusteVintePorcentoeXCELENTE(){
+    public void reajusteVintePorcentoExelente(){
         //Declaraçãod e ariável e atribuiçãod o valor de referência do objeto instanciado via construtor
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Marcus", LocalDate.now(), new BigDecimal("1000.00"));
@@ -50,5 +50,17 @@ public class ReajusteServiceTest {
         service.concedeReajuste(funcionario, Desempenho.OTIMO);
         //Evocação de método assertEquals(args) que validará se o retorno do método da classe testada, no caso ReajusteService, é o esperado
         assertEquals(new BigDecimal("1200.00"), funcionario.getSalario());
+    }
+
+    //Declaração de método de teste para realiste com desempenho excelente
+    @Test
+    public void reajusteVintePorcentoEspetacular(){
+        //Declaraçãod e ariável e atribuiçãod o valor de referência do objeto instanciado via construtor
+        ReajusteService service = new ReajusteService();
+        Funcionario funcionario = new Funcionario("Marcus", LocalDate.now(), new BigDecimal("1000.00"));
+        //Evocação do método .concedeReajuste(args) da classe ReajusteService, que fará o reajuste conforme o desempenho dado pelo valor do emum Desempenho.OTIMO
+        service.concedeReajuste(funcionario, Desempenho.ESPETACULAR);
+        //Evocação de método assertEquals(args) que validará se o retorno do método da classe testada, no caso ReajusteService, é o esperado
+        assertEquals(new BigDecimal("1400.00"), funcionario.getSalario());
     }
 }
