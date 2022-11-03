@@ -1,3 +1,5 @@
+//Classe carregada do treinamento
+
 package br.com.alura.tdd.modelo;
 
 import java.math.BigDecimal;
