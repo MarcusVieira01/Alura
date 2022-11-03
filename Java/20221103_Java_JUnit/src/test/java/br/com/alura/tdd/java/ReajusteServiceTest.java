@@ -30,7 +30,7 @@ public class ReajusteServiceTest {
 
     //Declaração de método de teste para realiste com desempenho bom
     @Test
-    public void reajusteTresPorcentoBom(){
+    public void reajusteQuinzePorcentoBom(){
         //Declaraçãod e ariável e atribuiçãod o valor de referência do objeto instanciado via construtor
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Marcus", LocalDate.now(), new BigDecimal("1000.00"));
@@ -42,7 +42,7 @@ public class ReajusteServiceTest {
 
     //Declaração de método de teste para realiste com desempenho excelente
     @Test
-    public void reajusteTresPorcentoeXCELENTE(){
+    public void reajusteVintePorcentoeXCELENTE(){
         //Declaraçãod e ariável e atribuiçãod o valor de referência do objeto instanciado via construtor
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Marcus", LocalDate.now(), new BigDecimal("1000.00"));
