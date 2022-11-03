@@ -1,7 +1,7 @@
 //Declaração de pacote
 package br.com.alura.tdd.java;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//Importação de classes
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import br.com.alura.tdd.modelo.Funcionario;
 import br.com.alura.tdd.service.BonusService;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //Declaração de classe de teste
 public class BonusServiceTest {
