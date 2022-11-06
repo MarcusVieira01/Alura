@@ -29,8 +29,15 @@ public class Funcionario {
 	public BigDecimal getSalario() {
 		return salario;
 	}
+
 	//Declaração de método com a funcionalidade de alterar o valor do atributo salário do objeto instanciado
     public void reajuste(BigDecimal reajuste) {
-		this.salario = this.salario.add(reajuste).setScale(2, RoundingMode.HALF_UP);//Arredondamento via método da classe BigDecimal
+		this.salario = this.salario.add(reajuste);
+		//Evocação do método para arredondar o salário
+		arredondarSalario();
     }
+	//Método que arredonda o salário
+	private void arredondarSalario() {
+		this.salario = this.salario.setScale(2, RoundingMode.HALF_UP);//Arredondamento via método da classe BigDecimal
+	}
 }
