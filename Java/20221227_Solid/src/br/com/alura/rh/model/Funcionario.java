@@ -3,10 +3,7 @@ package br.com.alura.rh.model;
 
 //Importação de bibliotecas externas
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
-//Importação de bibliotecas internas
-import br.com.alura.rh.ValidacaoException;
 
 /**
  * @apiNote Declaração de classe que abstrai um Funcionário
@@ -31,22 +28,6 @@ public class Funcionario {
 		this.cpf = cpf;
 		this.cargo = cargo;
 		this.salario = salario;
-	}
-	/**
-	 * Declaração de método que reajusta salário conforme validação sobre o percentual do reajuste perante o valor do atributo salario
-	 * @param aumento
-	 */
-	public void reajustarSalario(BigDecimal aumento) {
-		//Declaração de variável e atribuição do valor de retorno do método divide(args) do objeto aumento, passado como parâmetro
-		BigDecimal percentualReajuste = aumento.divide(salario, RoundingMode.HALF_UP);
-		//Condicional que verifica se o reajuste está fora do permitido e caso true, lança exceção
-		if (percentualReajuste.compareTo(new BigDecimal("0.4")) > 0) {
-			throw new ValidacaoException("Reajuste nao pode ser superior a 40% do salario!");
-		}
-		//Atribuição do valor do salario com aumento via método .add(args) do atributo salario
-		this.salario = this.salario.add(aumento);
-		//Atribuição do valor de retorno do método .now() da classe LocalDate
-		this.dataUltimoReajuste = LocalDate.now();
 	}
 
 	//Declaração dos métodos getter e setter para os atributos privados
@@ -79,5 +60,16 @@ public class Funcionario {
 	}
 	public void setDataUltimoReajuste(LocalDate dataUltimoReajuste) {
 		this.dataUltimoReajuste = dataUltimoReajuste;
+	}
+
+	/**
+	 * Declaração de método que fará a alteração do atributo salario e dataUltimoReajuste
+	 * @param novoSalario
+	 */
+	public void atualizarSalario(BigDecimal novoSalario) {
+		//Atribuição do valor passado como parâmetro ao atributo salario do objeto instanciado
+		this.salario = novoSalario;
+		//Atribuição do valor de retorno do método .now() da classe LocalDate ao atributo dataUltimoReajuste
+		this.dataUltimoReajuste = LocalDate.now();
 	}
 }
