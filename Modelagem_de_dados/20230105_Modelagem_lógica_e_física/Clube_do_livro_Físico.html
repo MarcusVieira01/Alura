@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+<title>Clube_do_livro_F&iacute;sico</title>
+</head>
+<body>
+<center>
+<h2>Clube_do_livro_F&iacute;sico</h2>
+</center>
+<h3>List of tables</h3>
+<ul>
+<li>
+<a href="#CLIENTE">CLIENTE</a>
+</li>
+<li>
+<a href="#EDITORA">EDITORA</a>
+</li>
+<li>
+<a href="#ESTOQUE">ESTOQUE</a>
+</li>
+<li>
+<a href="#ITEM_PEDIDO">ITEM_PEDIDO</a>
+</li>
+<li>
+<a href="#LIVRO">LIVRO</a>
+</li>
+<li>
+<a href="#PEDIDO">PEDIDO</a>
+</li>
+<li>
+<a href="#PESSOA_FISICA">PESSOA_FISICA</a>
+</li>
+<li>
+<a href="#PESSOA_JURIDICA">PESSOA_JURIDICA</a>
+</li>
+</ul>
+<div class="tableNameHeading">
+<h1>CLIENTE<a name="CLIENTE"></a>
+</h1>
+<h2>
+      (Physical Name: TB_CLIENTE)
+      </h2>
+<p class="comment">Tabela referente &agrave; entidade cliente</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_cliente (PK)</td><td class="tdTableDefinition">id_cliente</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo que define oc&oacute;digo do cliente, sendo uma chave prim&aacute;ria</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">email</td><td class="tdTableDefinition">email</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone_1</td><td class="tdTableDefinition">telefone_1</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone_2</td><td class="tdTableDefinition">telefone_2</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">rua</td><td class="tdTableDefinition">rua</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">estado</td><td class="tdTableDefinition">estado</td><td class="tdTableDefinition">VARCHAR(25)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">VARCHAR(10)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#PEDIDO">PEDIDO</a> referencing (id_cliente)</li>
+<li>
+<a href="#PESSOA_FISICA">PESSOA_FISICA</a> referencing (id_cliente)</li>
+<li>
+<a href="#PESSOA_JURIDICA">PESSOA_JURIDICA</a> referencing (id_cliente)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>EDITORA<a name="EDITORA"></a>
+</h1>
+<h2>
+      (Physical Name: TB_EDITORA)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_editora (PK)</td><td class="tdTableDefinition">id_editora</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome_editora</td><td class="tdTableDefinition">nome_editora</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome_contato</td><td class="tdTableDefinition">nome_contato</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone_1</td><td class="tdTableDefinition">telefone_1</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone_2</td><td class="tdTableDefinition">telefone_2</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">email</td><td class="tdTableDefinition">email</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#LIVRO">LIVRO</a> referencing (id_editora)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>ESTOQUE<a name="ESTOQUE"></a>
+</h1>
+<h2>
+      (Physical Name: TB_ESTOQUE)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">isbn (PK)
+                &nbsp;(<a href="#LIVRO">FK</a>)
+              </td><td class="tdTableDefinition">isbn</td><td class="tdTableDefinition">VARCHAR(13)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantidade</td><td class="tdTableDefinition">quantidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#LIVRO">LIVRO</a> through (isbn)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>ITEM_PEDIDO<a name="ITEM_PEDIDO"></a>
+</h1>
+<h2>
+      (Physical Name: TB_ITEM_PEDIDO)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_pedido (PK)
+                &nbsp;(<a href="#PEDIDO">FK</a>)
+              </td><td class="tdTableDefinition">id_pedido</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo que define o identificador da tabela</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">isbn (PK)
+                &nbsp;(<a href="#LIVRO">FK</a>)
+              </td><td class="tdTableDefinition">isbn</td><td class="tdTableDefinition">VARCHAR(13)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">qtd_pedido</td><td class="tdTableDefinition">qtd_pedido</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#PEDIDO">PEDIDO</a> through (id_pedido)</li>
+<li>
+<a href="#LIVRO">LIVRO</a> through (isbn)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>LIVRO<a name="LIVRO"></a>
+</h1>
+<h2>
+      (Physical Name: TB_LIVRO)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">isbn (PK)</td><td class="tdTableDefinition">isbn</td><td class="tdTableDefinition">VARCHAR(13)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">categoria</td><td class="tdTableDefinition">categoria</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ano</td><td class="tdTableDefinition">ano</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">titulo</td><td class="tdTableDefinition">titulo</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">autor</td><td class="tdTableDefinition">autor</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor</td><td class="tdTableDefinition">valor</td><td class="tdTableDefinition">DECIMAL(5,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_editora
+                &nbsp;(<a href="#EDITORA">FK</a>)
+              </td><td class="tdTableDefinition">id_editora</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#EDITORA">EDITORA</a> through (id_editora)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#ITEM_PEDIDO">ITEM_PEDIDO</a> referencing (isbn)</li>
+<li>
+<a href="#ESTOQUE">ESTOQUE</a> referencing (isbn)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>PEDIDO<a name="PEDIDO"></a>
+</h1>
+<h2>
+      (Physical Name: TB_PEDIDO)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_pedido (PK)</td><td class="tdTableDefinition">id_pedido</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo que define o identificador da tabela</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_pedido</td><td class="tdTableDefinition">data_pedido</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor_pedido</td><td class="tdTableDefinition">valor_pedido</td><td class="tdTableDefinition">DECIMAL(5,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_cliente
+                &nbsp;(<a href="#CLIENTE">FK</a>)
+              </td><td class="tdTableDefinition">id_cliente</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo que define oc&oacute;digo do cliente, sendo uma chave prim&aacute;ria</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#CLIENTE">CLIENTE</a> through (id_cliente)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#ITEM_PEDIDO">ITEM_PEDIDO</a> referencing (id_pedido)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>PESSOA_FISICA<a name="PESSOA_FISICA"></a>
+</h1>
+<h2>
+      (Physical Name: TB_PESSOA_FISICA)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">pf</td><td class="tdTableDefinition">VARCHAR(11)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">rg</td><td class="tdTableDefinition">rg</td><td class="tdTableDefinition">VARCHAR(30)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_cliente
+                &nbsp;(<a href="#CLIENTE">FK</a>)
+              </td><td class="tdTableDefinition">id_cliente</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo que define oc&oacute;digo do cliente, sendo uma chave prim&aacute;ria</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#CLIENTE">CLIENTE</a> through (id_cliente)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>PESSOA_JURIDICA<a name="PESSOA_JURIDICA"></a>
+</h1>
+<h2>
+      (Physical Name: TB_PESSOA_JURIDICA)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">VARCHAR(15)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">inscricao_estadual</td><td class="tdTableDefinition">inscricao_estadual</td><td class="tdTableDefinition">VARCHAR(30)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_cliente
+                &nbsp;(<a href="#CLIENTE">FK</a>)
+              </td><td class="tdTableDefinition">id_cliente</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo que define oc&oacute;digo do cliente, sendo uma chave prim&aacute;ria</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#CLIENTE">CLIENTE</a> through (id_cliente)</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
