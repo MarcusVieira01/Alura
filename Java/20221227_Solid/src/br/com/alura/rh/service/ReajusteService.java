@@ -3,13 +3,9 @@ package br.com.alura.rh.service;
 
 //Importação de classes externas
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 //Importação de classes internas
-import br.com.alura.rh.ValidacaoException;
 import br.com.alura.rh.model.Funcionario;
 
 /**
