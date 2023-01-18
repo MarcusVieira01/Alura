@@ -29,4 +29,9 @@ public class Terceirizado{
     public String getEmpresa() {
         return empresa;
     }
+    
+    public DadosPessoais getDadosPessoais() {
+        return dadosPessoais;
+    }
+    
 }
