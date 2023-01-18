@@ -10,10 +10,7 @@ import java.time.LocalDate;
  */
 public class Funcionario {
 	//Declaração de atributos privados
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
+	DadosPessoais dadosPessoais;
 	private LocalDate dataUltimoReajuste;
 
 	/**
@@ -24,36 +21,21 @@ public class Funcionario {
 	 * @param salario
 	 */
 	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+		dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario);
 	}
 
 	//Declaração dos métodos getter e setter para os atributos privados
 	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
+		return this.dadosPessoais.getNome();
 	}
 	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		return this.dadosPessoais.getCpf();
 	}
 	public Cargo getCargo() {
-		return cargo;
-	}
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
+		return this.dadosPessoais.getCargo();
 	}
 	public BigDecimal getSalario() {
-		return salario;
-	}
-	public void setSalario(BigDecimal salario) {
-		this.salario = salario;
+		return this.dadosPessoais.getSalario();
 	}
 	public LocalDate getDataUltimoReajuste() {
 		return dataUltimoReajuste;
@@ -68,7 +50,7 @@ public class Funcionario {
 	 */
 	public void atualizarSalario(BigDecimal novoSalario) {
 		//Atribuição do valor passado como parâmetro ao atributo salario do objeto instanciado
-		this.salario = novoSalario;
+		this.dadosPessoais.setSalario(novoSalario);
 		//Atribuição do valor de retorno do método .now() da classe LocalDate ao atributo dataUltimoReajuste
 		this.dataUltimoReajuste = LocalDate.now();
 	}
@@ -78,6 +60,6 @@ public class Funcionario {
 	 * @param novoCargo
 	 */
 	public void promover(Cargo novoCargo){
-		this.cargo = novoCargo;
+		this.dadosPessoais.setCargo(novoCargo);
 	}
 }
