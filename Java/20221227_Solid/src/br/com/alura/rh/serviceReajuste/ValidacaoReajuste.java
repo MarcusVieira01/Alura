@@ -1,5 +1,5 @@
 //Declaração de pacote
-package br.com.alura.rh.service;
+package br.com.alura.rh.serviceReajuste;
 
 //Importação de classe externa 
 import java.math.BigDecimal;
