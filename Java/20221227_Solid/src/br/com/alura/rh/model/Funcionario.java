@@ -72,4 +72,12 @@ public class Funcionario {
 		//Atribuição do valor de retorno do método .now() da classe LocalDate ao atributo dataUltimoReajuste
 		this.dataUltimoReajuste = LocalDate.now();
 	}
+
+	/**
+	 * Realiza a modificação do valor do atributo cargo
+	 * @param novoCargo
+	 */
+	public void promover(Cargo novoCargo){
+		this.cargo = novoCargo;
+	}
 }
