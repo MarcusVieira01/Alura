@@ -1,14 +1,24 @@
 # Imprime mensagem de boas vindas
 print("Bem vindo ao jogo de adivinhação!")
-# Defiçnição do número secreto à ser adivinhado
+# Definição do número secreto à ser adivinhado
 numeroSecreto = 42
+tentativas = 3
+palpites = 1
 # Evoca o método input e atribui seu valor de retorno à variável chute
 chute = input("Digite o seu número: ")
-# Condicional que exibirá a mensagem pertinente para cada situação
-if numeroSecreto == int(chute):
-    print("Você acertou! O número é " + str(numeroSecreto))
-elif numeroSecreto > int(chute):
-    print("O número secreto é maior que seu chute")
-elif numeroSecreto < int(chute):
-    print("O número secreto é menor que seu chute")
-
+# Loop while que fara iterações enquanto a condição for true
+while tentativas >= palpites:
+    palpites+=1
+    # Condicional que exibirá a mensagem pertinente
+    if int(chute) == numeroSecreto:
+        print("Acertô mizerarvi!")
+        exit()
+    elif int(chute) > numeroSecreto:
+        print(" Seu chute é maior que o número secreto!")
+        chute = input("Digite o seu " + str(palpites) + "º número: ")
+    elif int(chute) < numeroSecreto:
+        print(" Seu chute é menor que o número secreto!")
+        chute = input("Digite o seu " + str(palpites) + "º número: ")
+# Condicional que exibirá a pensagem de jogo eprdido
+if tentativas >= 3:
+    print("Erroooooou tudo!")
