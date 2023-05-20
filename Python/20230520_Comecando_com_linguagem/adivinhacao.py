@@ -5,8 +5,7 @@ numeroSecreto = 42
 # Evoca o método input e atribui seu valor de retorno à variável chute
 chute = input("Digite o seu número: ")
 # Condicional que exibirá a mensagem pertinente
-if numeroSecreto == chute:
-    print("Você acertou! O número é " + numeroSecreto)
+if numeroSecreto == int(chute):
+    print("Você acertou! O número é " + str(numeroSecreto))
 else:
     print("ERRROOOOUUUU!")
-
