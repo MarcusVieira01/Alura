@@ -17,11 +17,11 @@ for palpites in range(1, tentativas):
         break
     elif chute > numeroSecreto:
         print(" Seu chute é maior que o número secreto!")
-        chute = input("Digite o seu {}º número: ".format(palpites))
+        chute = int(input(f"Digite o seu {palpites}º número: "))
     elif chute < numeroSecreto:
         print(" Seu chute é menor que o número secreto!")
-        chute = input("Digite o seu {}º número: ".format(palpites))
-        
+        chute = int(input(f"Digite o seu {palpites}º número: "))
+
 # Condicional que exibirá a pensagem de jogo eprdido
 if palpites >= 3:
     print("Erroooooou tudo!")
