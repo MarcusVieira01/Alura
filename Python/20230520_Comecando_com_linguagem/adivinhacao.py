@@ -3,11 +3,10 @@ print("Bem vindo ao jogo de adivinhação!")
 # Definição do número secreto à ser adivinhado
 numeroSecreto = 42
 tentativas = 3
-palpites = 1
 # Evoca o método input e atribui seu valor de retorno à variável chute
 chute = input("Digite o seu número: ")
 # Loop while que fara iterações enquanto a condição for true
-while tentativas >= palpites:
+for palpites in range(1, tentativas):
     palpites+=1
     # Condicional que exibirá a mensagem pertinente
     if int(chute) == numeroSecreto:
