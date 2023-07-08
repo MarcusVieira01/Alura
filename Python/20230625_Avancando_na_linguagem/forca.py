@@ -9,6 +9,10 @@ def jogar():
     palavra_secreta = "banana"
     enforcou = False
     acertou = False
+    letras_acertadas = ["_","_","_","_","_","_"]
+
+    #
+    print(letras_acertadas,)
 
     # Loop que executará a lógica do jogo
     while(not enforcou and not acertou):
@@ -23,10 +27,11 @@ def jogar():
         for letra in palavra_secreta:
             # Condicional que verificará se o chute tem mesmo valor da letra no lacço for
             if chute == letra:
-                print(f"Encontrei a letra {chute} na posição {index}.")
+                letras_acertadas[index] = letra
             # Incremento unitário na variável index
             index += 1
-
+        # 
+        print(letras_acertadas)
 
 
 
