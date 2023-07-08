@@ -1,16 +1,39 @@
 '''Descrição do módulo: Jogo de forca'''
+#
+import random
+
 def jogar():
     '''Descrição da função jogar: Definição de função com a lógica do jogo de forca'''
     print("*********************************")
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
+    # Abertura do arquivo txt como apenas leitura e atribuição à variável arquivo
+    arquivo = open("./palavras.txt", "r", encoding="utf-8")
+
+    # Declaração de lista vazia
+    palavras = []
+
+    # Loop que iterará o arquivo e atribuirá cada valor de sua linha à lista palavras
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    # Método que fecha o arquivo
+    arquivo.close()
+
+    # Atribuição à variável indice o valor pseudorandômico de retorno da função randrange(args)
+    indice = random.randrange(0,len(palavras),1)
+
+    # Atribuição do valor do elemento dado pelo conteúdo da variável indice
+    palavra_secreta = palavras[indice].upper()
+
     # Declaração de variáveis e suas inicializações
-    palavra_secreta = "banana".upper()
     enforcou = False
     acertou = False
     erros = 0
-    #
+
+    # Loop interno à lista para geração de _ para cada caractere do conteúdo da variável palavra_secreta
     letras_acertadas = ["_" for letra in palavra_secreta]
 
     # Exibe a sequencia contida na lista letras_acertadas
