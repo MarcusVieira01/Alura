@@ -8,19 +8,16 @@ def jogar():
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
-    # Abertura do arquivo txt como apenas leitura e atribuição à variável arquivo
-    arquivo = open("./palavras.txt", "r", encoding="utf-8")
+    # Abertura do arquivo txt como apenas leitura e atribuição à variável arquivo com uso de with, para fechamento automático do arquivo
+    with open("./palavras.txt", "r", encoding="utf-8") as arquivo:
 
-    # Declaração de lista vazia
-    palavras = []
+        # Declaração de lista vazia
+        palavras = []
 
-    # Loop que iterará o arquivo e atribuirá cada valor de sua linha à lista palavras
-    for linha in arquivo:
-        linha = linha.strip()
-        palavras.append(linha)
-
-    # Método que fecha o arquivo
-    arquivo.close()
+        # Loop que iterará o arquivo e atribuirá cada valor de sua linha à lista palavras
+        for linha in arquivo:
+            linha = linha.strip()
+            palavras.append(linha)
 
     # Atribuição à variável indice o valor pseudorandômico de retorno da função randrange(args)
     indice = random.randrange(0,len(palavras),1)
