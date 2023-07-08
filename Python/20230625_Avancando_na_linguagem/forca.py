@@ -56,6 +56,7 @@ def jogar():
         # Captura o input do usuário e atribui à variável executando limpeza de dados
         chute = input("Qual a letra?")
         chute = chute.strip().upper()
+        
         # Condicional define se a letra chutada está dentro da cadeia contida em palavra_secreta. Caso false, soma 1 no acumulador de erros
         if chute in palavra_secreta:
             # Declaração de variável local ao loop while
