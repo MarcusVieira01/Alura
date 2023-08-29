@@ -15,5 +15,28 @@ class Conta:
     # Declaração de método que fará o decréscimo de um valor ao atributo saldo
     def saca(self, valorSaca):
         self.__saldo -= valorSaca
+    #
+    def transfere(self, destino, valor):
+        self.saca(valor)
+        destino.deposita(valor)
 
+    #Declaração de métodos getter e setter usando annotations
+    @property
+    def numero(self):
+        return self.__numero
+    @property
+    def titular(self):
+        return self.__titular
+    @property
+    def saldo(self):
+        return self.__saldo
+    @property
+    def limite(self):
+        return self.__limite
+    
+    @limite.setter
+    def limite(self, valor):
+        self.__limite = valor
+
+        
     
