@@ -4,12 +4,12 @@ class Serie:
         self.__nome = nome
         self.__ano = ano
         self.__temporadas = temporadas
-        self.likes = 0
+        self.__likes = 0
 
     # Métodos públicos
     # Método que adiciona um like
     def darLike(self):
-        self.likes += 1
+        self.__likes += 1
 
     # Métodos getter e setter
     # Métodos getter
@@ -22,6 +22,9 @@ class Serie:
     @property
     def temporadas(self):
         return self.__temporadas
+    @property
+    def likes(self):
+        return self.__likes
     
     # Métodos setter
     @nome.setter
@@ -33,4 +36,6 @@ class Serie:
     @temporadas.setter
     def duracao(self, valor):
         self.__temporadas = valor
-
+    @likes.setter
+    def likes(self, valor):
+        self.__likes = valor
