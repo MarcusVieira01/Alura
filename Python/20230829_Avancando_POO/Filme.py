@@ -4,13 +4,13 @@ class Filme:
         self.__nome = nome
         self.__ano = ano
         self.__duracao = duracao
-        self.likes = 0
+        self.__likes = 0
 
     # Métodos públicos
-    # Método que adiciona um like
+    # Método que adiciona um like usando o método getter self.__likes
     def darLike(self):
-        self.likes += 1
-
+        self.__likes += 1
+        
     # Métodos getter e setter
     # Métodos getter
     @property
@@ -22,6 +22,9 @@ class Filme:
     @property
     def duracao(self):
         return self.__duracao
+    @property
+    def likes(self):
+        return self.__likes
     
     # Métodos setter
     @nome.setter
@@ -33,3 +36,6 @@ class Filme:
     @duracao.setter
     def duracao(self, valor):
         self.__duracao = valor
+    @likes.setter
+    def likes(self, valor):
+        self.__likes = valor
