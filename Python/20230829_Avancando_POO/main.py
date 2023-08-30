@@ -6,3 +6,6 @@ atlanta = Serie("Atlanta", 2018, 2)
 
 print(vingadores)
 print(atlanta)
+
+vingadores.darLike()
+atlanta.darLike()
