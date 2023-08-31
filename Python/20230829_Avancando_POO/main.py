@@ -10,5 +10,5 @@ print(atlanta.nome)
 vingadores.darLike()
 atlanta.darLike()
 
-print(f"{vingadores.nome} - likes {vingadores.likes}")
-print(f"{atlanta.nome} - likes {atlanta.likes}")
+print(f"{vingadores.nome} - likes {vingadores.likes} - ano {vingadores.ano} - duração {vingadores.duracao}")
+print(f"{atlanta.nome} - likes {atlanta.likes} - ano {atlanta.ano} - temporadas {atlanta.temporadas}" )
