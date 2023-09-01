@@ -15,4 +15,5 @@ atlanta.darLike()
 # vingadores.imprime()
 # atlanta.imprime()
 
-print(vingadores , atlanta)
+print(vingadores)
+print(atlanta.__repr__())
