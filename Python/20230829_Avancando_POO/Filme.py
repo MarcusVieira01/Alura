@@ -7,6 +7,9 @@ class Filme(ProgramaTV):
         self.__duracao = duracao
 
     # Métodos públicos
+    # Declaração de método que exibe os atributos no output
+    def imprime(self):
+        print(f"{self.nome} - {self.ano}  - {self.duracao} - {self.likes}")
         
     # Métodos getter e setter
     # Métodos getter
