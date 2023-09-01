@@ -9,8 +9,8 @@ class ProgramaTV:
     def darLike(self):
         self.__likes += 1
     # Declaração de método que exibe os atributos no output
-    def imprime(self):
-        print(f"{self.__nome} - {self.__ano} - {self.__likes}")
+    def __str__(self):
+        return f"{self.__nome} - {self.__ano} - {self.__likes}"
 
     # Declaração de métodos setter e getter
     # Getters
