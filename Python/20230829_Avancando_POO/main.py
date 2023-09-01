@@ -11,7 +11,7 @@ listaProg = [vingadores, atlanta, tmep, demolidor]
 
 playlistFDS = Playlist("Fim de semana", listaProg)
 
-print(f"O tamanho da play list é {len(playlistFDS)}")
+print(f"O tamanho da play list é {len(playlistFDS.listaProgramas)}")
 
 for programas in playlistFDS:
     print(programas.nome)
