@@ -9,15 +9,18 @@ class Serie(ProgramaTV):
     # Métodos públicos
     # Declaração de método que exibe os atributos no output fazendo polimorfismo com a superclasse
     def __str__(self):
-        return f"{self.nome} - {self.ano}  - {self.duracao} - {self.likes}"
+        return f"{self.nome} - {self.ano}  - {self.temporadas} - {self.likes}"
+    
+    def __repr__(self):
+        return f"Serie nome={self.nome},ano={self.ano},druacao={self.temporadas},likes{self.likes}"
 
     # Métodos getter e setter
-    # Métodos getter
+    # Métodos getter"
     @property
     def temporadas(self):
         return self.__temporadas
     
     # Métodos setter
     @temporadas.setter
-    def duracao(self, valor):
+    def temporadas(self, valor):
         self.__temporadas = valor

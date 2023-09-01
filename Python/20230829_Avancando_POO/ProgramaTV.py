@@ -10,7 +10,10 @@ class ProgramaTV:
         self.__likes += 1
     # Declaração de método que exibe os atributos no output
     def __str__(self):
-        return f"{self.__nome} - {self.__ano} - {self.__likes}"
+        return f"{self.nome} - {self.ano} - {self.likes}"
+    
+    def __repr__(self) -> str:
+        return f"Programa nome={self.nome},ano={self.ano},likes={self.likes}"
 
     # Declaração de métodos setter e getter
     # Getters
