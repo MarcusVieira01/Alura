@@ -1,19 +1,27 @@
 from Filme import Filme
 from Serie import Serie
+from Playlist import Playlist
 
 vingadores = Filme("Vingadores", 2018, 160)
 atlanta = Serie("Atlanta", 2018, 2)
+tmep = Filme("Todo mundo em pânico", 1999, 180)
+demolidor = Serie("Demolidor", 2016, 8)
 
-print(vingadores.nome)
-print(atlanta.nome)
+listaProgramas = [vingadores, atlanta, tmep, demolidor]
 
-vingadores.darLike()
-atlanta.darLike()
+playlistFDS = Playlist("Fim de semana", listaProgramas)
 
-# print(f"{vingadores.nome} - likes {vingadores.likes} - ano {vingadores.ano} - duração {vingadores.duracao}")
-# print(f"{atlanta.nome} - likes {atlanta.likes} - ano {atlanta.ano} - temporadas {atlanta.temporadas}" )
-# vingadores.imprime()
-# atlanta.imprime()
+for programas in playlistFDS.listaProgramas:
+    print(programas.nome)
 
-print(vingadores)
-print(atlanta.__repr__())
+for programas in playlistFDS.listaProgramas:
+    programas.darLike()
+
+tmep.darLike()
+
+for programas in playlistFDS.listaProgramas:
+    print(programas)
+
+for programas in playlistFDS.listaProgramas:
+    print(programas.__repr__())
+
