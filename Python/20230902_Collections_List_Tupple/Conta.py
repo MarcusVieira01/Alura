@@ -1,4 +1,6 @@
-class Conta:
+from abc import ABCMeta, abstractmethod
+
+class Conta(metaclass=ABCMeta):
     ## Declaração de dunder methods
     # Declaração de construtor
     def __init__(self, codigo):
@@ -8,6 +10,10 @@ class Conta:
     def __str__(self):
         return f'ContaCorrente (codigo={self.codigo}, saldo={self.__saldo})'
     
+    # Declaração de método abstrado
+    @abstractmethod
+    def passaMes(self):
+        pass
 
     ## Declaração de métodos getter e setter
     # Getter
