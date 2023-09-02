@@ -9,3 +9,5 @@ print(urlExtraida.getURLBase())
 print(urlExtraida.getURLParametros())
 
 print(urlExtraida.getValorParametro("quantidade"))
+
+print(f"A URL tem {len(urlExtraida)} caracteres")
