@@ -8,10 +8,16 @@ class ExtratorURL:
     def __init__(self, url):
         self.__url = self.sanitizaURL(url)
         self.__urlValidada = self.validaURL()
-    # Declaração de dunder method que gera a característica do objeto
-    # ser sized
+    # Declaração de dunder method que gera a característica do objeto ser sized
     def __len__(self):
         return len(self.url)
+    # Declaração de dunder method para retornar uma representação textual do objeto
+    def __str__(self):
+        return f"ExtratorURL (url={self.url}, urlValidada={self.urlValidada})"
+    # Sobreesrcita do dunder method __eq__ para forçar a igualdade entre objetos pelo
+    # parâmetro url
+    def __eq__(self, comparacao):
+        return self.url == comparacao.url
 
     ## Declaração de métodos getter e setter para os atributos
     # Declaração de métodos getter
