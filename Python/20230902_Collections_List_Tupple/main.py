@@ -18,3 +18,7 @@ for conta in listaContas:
 
 for conta in listaContas:
     print(conta)
+
+print("Ordenação:")
+for conta in sorted(listaContas):
+    print(conta)
