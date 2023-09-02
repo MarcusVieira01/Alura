@@ -5,11 +5,12 @@ from ContaInvestimento import ContaInvestimento
 conta16 = ContaCorrente(16)
 conta17 = ContaPoupanca(17)
 conta18 = ContaInvestimento(18)
+conta19 = ContaCorrente(19)
 
-conta16.deposita(1000)
-conta17.deposita(2123)
+conta17.deposita(1000)
+conta18.deposita(1234)
 
-listaContas = [conta16, conta17, conta18]
+listaContas = [conta16, conta17, conta18, conta19]
 
 for conta in listaContas:
     conta.passaMes()
