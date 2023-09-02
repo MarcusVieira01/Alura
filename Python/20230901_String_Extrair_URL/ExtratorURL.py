@@ -7,16 +7,25 @@ class ExtratorURL:
     # Declaração de métodos
     # Realiza a limpeza da URL no quesito espaços em branco e caracteres especiais
     def sanitizaURL(self, url):
-        return url.strip()
+        if type(url) == str:
+            return url.strip()
+        else:
+            return ""
     
+    # Declaração de método que realiza a validação da UL+RL
+    def validaURL(self):
+        if self.url == "":
+            raise ValueError("A URL está vazia!")
+        else:
+            return True
+        
     # Retorna a URL base
     def getURLBase(self):
         return self.url[0 : self.url.find("?")]
-    
+        
     # Retorna URL com os parâmetros
     def getURLParametros(self):
         return self.url[self.url.find("?") + 1 : len(self.url)]
-    
     # Retorna o valor do Parâmetro da URL inserido
     def getValorParametro(self, parametro):
         # Atribui o split no caractere "&" do retorno do método getURLParametros()
@@ -34,12 +43,6 @@ class ExtratorURL:
             else:
                 continue
     
-    # Declaração de método que realiza a validação da UL+RL
-    def validaURL(self):
-        if self.url == "":
-            raise ValueError("A URL está vazia!")
-        else:
-            return True
 
     # Declaração de métodos getter e setter para os atributos
     # Declaração de métodos getter
