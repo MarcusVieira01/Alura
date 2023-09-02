@@ -3,19 +3,32 @@ import re
 
 # Declaração da classe que abstrai a extração de uma URL
 class ExtratorURL:
+    ## Declaração de dunder methods
     # Declaração de construtor
     def __init__(self, url):
         self.__url = self.sanitizaURL(url)
         self.__urlValidada = self.validaURL()
+    # Declaração de dunder method que gera a característica do objeto
+    # ser sized
+    def __len__(self):
+        return len(self.url)
 
-    # Declaração de métodos
+    ## Declaração de métodos getter e setter para os atributos
+    # Declaração de métodos getter
+    @property
+    def url(self):
+        return self.__url
+    @property
+    def urlValidada(self):
+        return self.__urlValidada
+    
+    ## Declaração de métodos auxiliares
     # Realiza a limpeza da URL no quesito espaços em branco e caracteres especiais
     def sanitizaURL(self, url):
         if type(url) == str:
             return url.strip()
         else:
             return ""
-    
     # Declaração de método que realiza a validação da URL
     def validaURL(self):    
         # Define o pardrão REGEX para a validação da URL
@@ -31,7 +44,8 @@ class ExtratorURL:
             raise ValueError("A URL é inválida")
         else:
             return True
-        
+    
+    ## Declaração de métodos públicos
     # Retorna a URL base
     def getURLBase(self):
         return self.url[0 : self.url.find("?")]
@@ -39,6 +53,7 @@ class ExtratorURL:
     # Retorna URL com os parâmetros
     def getURLParametros(self):
         return self.url[self.url.find("?") + 1 : len(self.url)]
+    
     # Retorna o valor do Parâmetro da URL inserido
     def getValorParametro(self, parametro):
         # Atribui o split no caractere "&" do retorno do método getURLParametros()
@@ -55,13 +70,3 @@ class ExtratorURL:
                 return elemento[1]
             else:
                 continue
-
-    # Declaração de métodos getter e setter para os atributos
-    # Declaração de métodos getter
-    @property
-    def url(self):
-        return self.__url
-    @property
-    def urlValidada(self):
-        return self.__urlValidada
-    
