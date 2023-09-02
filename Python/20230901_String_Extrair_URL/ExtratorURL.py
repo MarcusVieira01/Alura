@@ -1,5 +1,7 @@
+# Importação de módulos, pacotes e funções externas
 import re
 
+# Declaração da classe que abstrai a extração de uma URL
 class ExtratorURL:
     # Declaração de construtor
     def __init__(self, url):
@@ -53,7 +55,6 @@ class ExtratorURL:
                 return elemento[1]
             else:
                 continue
-    
 
     # Declaração de métodos getter e setter para os atributos
     # Declaração de métodos getter
