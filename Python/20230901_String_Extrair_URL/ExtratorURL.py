@@ -1,3 +1,5 @@
+import re
+
 class ExtratorURL:
     # Declaração de construtor
     def __init__(self, url):
@@ -12,10 +14,19 @@ class ExtratorURL:
         else:
             return ""
     
-    # Declaração de método que realiza a validação da UL+RL
-    def validaURL(self):
+    # Declaração de método que realiza a validação da URL
+    def validaURL(self):    
+        # Define o pardrão REGEX para a validação da URL
+        padraoURL = re.compile("(http(s)?://)?(www.)?(bytebank.com)(.br)?(/cambio)")
+        # Atribui o retorno do método .match() à variável
+        urlMatch = padraoURL.match(self.url)
+        # Condicional que primeiro valida se a URL não é vazia. Se False valida se a URL não
+        # est# dentro do pardrão REGEX. Se False a URL está validada. Método aplicado de 
+        # fail fast
         if self.url == "":
-            raise ValueError("A URL está vazia!")
+            raise ValueError("A URL está vazia!") 
+        elif not urlMatch:
+            raise ValueError("A URL é inválida")
         else:
             return True
         
