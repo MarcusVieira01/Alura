@@ -8,7 +8,11 @@ class Conta(metaclass=ABCMeta):
         self.__saldo = 0
     # Declaração de método que fará a representação textual do objeto
     def __str__(self):
-        return f'ContaCorrente (codigo={self.codigo}, saldo={self.__saldo})'
+        return f'Conta (codigo={self.codigo}, saldo={self.__saldo})'
+    # Declaração de método que retorna a comparação entre atributos de 
+    # objetos diferentes, podendo ser ordenado
+    def __lt__(self, other):
+        return self.saldo < other.saldo
     
     # Declaração de método abstrado
     @abstractmethod
