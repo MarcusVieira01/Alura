@@ -1,5 +1,7 @@
 from abc import ABCMeta, abstractmethod
+from functools import total_ordering
 
+@total_ordering
 class Conta(metaclass=ABCMeta):
     ## Declaração de dunder methods
     # Declaração de construtor
