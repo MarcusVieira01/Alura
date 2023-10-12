@@ -2,7 +2,7 @@
 import openai
 
 # Chamada de atributo e atribuição do valor da API key da OpenAI
-openai.api_key = "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"
+openai.api_key = ""
 
 
 # Criação, usando o objeto ChatCompletion, de um chat com a IA da OpenAI
