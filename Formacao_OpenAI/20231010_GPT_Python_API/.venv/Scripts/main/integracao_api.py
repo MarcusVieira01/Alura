@@ -1,9 +1,15 @@
 # Importação de bibliotecas externas
 import openai
+import dotenv
+import os
 
-# Chamada de atributo e atribuição do valor da API key da OpenAI
-openai.api_key = ""
+# Chamada da função load_dotenv() para carga das variáveis de ambiente
+dotenv.load_dotenv()
 
+# Chamada de atributo e atribuição do valor da API key da OpenAI retornada pelo método getenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+# Chamada de atributo e atribuição do valor da ORGANIZATION cadastrada dentro do OpenAI
+openai.organization = os.getenv("ORGANIZATION")
 
 # Criação, usando o objeto ChatCompletion, de um chat com a IA da OpenAI
 response = openai.ChatCompletion.create(
@@ -11,7 +17,6 @@ response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     # Definição de um array de dicionários com os parâmetros de configuração
     messages=[
-        # Definição de dicionário para a caixa System do Playground
         {
             "role":"system",
             "content":"Gere nomes de produtos fictícios sem descrição de acordo com a requisição do usuário."
