@@ -14,9 +14,9 @@ openai.organization = os.getenv("ORGANIZATION")
 # Criação, usando o objeto ChatCompletion, de um chat com a IA da OpenAI
 response = openai.ChatCompletion.create(
     # Definição do modelo de IA a ser usado
-    model="gpt-3.5-turbo",
+    model = "gpt-3.5-turbo",
     # Definição de um array de dicionários com os parâmetros de configuração
-    messages=[
+    messages = [
         {
             "role":"system",
             "content":"Gere nomes de produtos fictícios sem descrição de acordo com a requisição do usuário."
@@ -26,7 +26,13 @@ response = openai.ChatCompletion.create(
             "role":"user",
             "content":"Gere 5 produtos"
         }
-    ]
+    ],
+    # Declaração dos parâmetros de configuração da resposta
+    temperature = 1,
+    max_tokens = 256,
+    top_p = 1,
+    frequency_penalty = 0,
+    presence_penalty = 0
 )
 
 print(response)
