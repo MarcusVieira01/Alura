@@ -45,6 +45,10 @@ def analise_sentimento(nome_produto):
     # retorno da função de carregamento de arquivo
     prompt_usuario = carrega(f".venv/gpt-python-1-dados/avaliacoes-{nome_produto}.txt")
     
+    # Declaração de variável e atribuição de valor que será o tempo de espera para as exceções 
+    # baseadas em tempo
+    tempo_espera = 5
+
     # Loop for que fará três chamadas em caso de exceção.
     for i in range(0,3):
         # Bloco a ser executado em caso para verificação de exceção
@@ -79,7 +83,12 @@ def analise_sentimento(nome_produto):
         # Tratamento da excessão APIError com uso de pausa de 5 segundos a fim da API voltar dentro deste período
         except openai.error.APIError as e:
             print(f"Erro de API: {e}")
-            time.sleep(5)
+            time.sleep(tempo_espera)
+        # Tratamento de excessão RateLimitError com uso de uma pausa exponencial para que o tempo de rate seja atualizado
+        except openai.error.RateLimitError as e:
+            print(f"Erro de limite de taxa: {e}")
+            time.sleep(tempo_espera)
+            tempo_espera *= 2
 
 
 # Carretamento das variáveis de ambiente
@@ -88,7 +97,18 @@ dotenv.load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Declaração da lista de produtos
-lista_produtos = ["Tapete de yoga", "Tabuleiro de xadrez de madeira"]
+lista_produtos = [
+                  "Balança de cozinha digital",
+                  "Boia inflável para piscina",
+                  "DVD player automotivo",
+                  "Esteira elétrica para fitness",
+                  "Grill Elétrico para churrasco",
+                  "Jogo de copos e taças de cristal",
+                  "Miniatura de carro colecionável",
+                  "Mixer de sucos e vitaminas",
+                  "Tapete de yoga", 
+                  "Tabuleiro de xadrez de madeira"
+                 ]
 
 # Loop for que iterará a lista de produtos e chamará a função analise_sentimento para cada iteração
 for produto in lista_produtos:
