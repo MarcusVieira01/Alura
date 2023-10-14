@@ -38,7 +38,8 @@ encoder = tiktoken.encoding_for_model("gpt-3.5-turbo")
 lista_tokens = encoder.encode(prompt_sistema + prompt_usuario)
 print(f"\nQuantidade de tokens na entrada: {len(lista_tokens)}")
 
-# Delcaraçãod e variável de modelo, condicional que verificará qual tipo de modelo é mais adequado, atribuindo o valor de cada condição à variável modelo e exibição do modelo escolhido
+# Declaração de variável para o modelo, condicional que verificará qual tipo de modelo é mais adequado, 
+# atribuindo o valor de cada condição à variável modelo e exibição do modelo escolhido
 modelo = ""
 tokens_saida = 2048
 if len(lista_tokens) >= 4096 - tokens_saida:
