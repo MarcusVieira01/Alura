@@ -11,6 +11,19 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # Chamada de atributo e atribuição do valor da ORGANIZATION cadastrada dentro do OpenAI
 openai.organization = os.getenv("ORGANIZATION")
 
+# Atribuição de uma longstring à variável sendo o prompt de configuração do sistema
+prompt_sistema = """ 
+                    Você é um caracterizador de produtos, onde deve escolher uma categoria abaixo:
+                    ###Lista de categorias###
+                    1. Beleza
+                    2. Entreterimento
+                    3. Esportes
+                    4. Outros
+                    ###Exemplo###
+                    Bola de tênis
+                    Esportes
+                 """
+
 # Criação, usando o objeto ChatCompletion, de um chat com a IA da OpenAI
 response = openai.ChatCompletion.create(
     # Definição do modelo de IA a ser usado
@@ -19,12 +32,12 @@ response = openai.ChatCompletion.create(
     messages = [
         {
             "role":"system",
-            "content":"Você é um categorizador de produtos."
+            "content":prompt_sistema
         },
         # Definição de dicionário para o prompt do usuário
         {
             "role":"user",
-            "content":"Escova de dente"
+            "content":"Tablet"
         }
     ],
     # Declaração dos parâmetros de configuração da resposta
