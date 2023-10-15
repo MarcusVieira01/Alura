@@ -8,6 +8,8 @@ dotenv.load_dotenv()
 #
 cpf = os.getenv("CPF_REAL")
 
+#
 objCPF = Cpf(cpf)
 
-print(objCPF)
+#
+print(f"O CPF é: {objCPF}")
