@@ -11,4 +11,3 @@ cpf = os.getenv("CPF_REAL")
 objCPF = Cpf(cpf)
 
 print(objCPF)
-print(objCPF.validado())
