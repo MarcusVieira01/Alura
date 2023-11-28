@@ -17,6 +17,8 @@ def openai_trasncrever(caminho_audio, nome_arquivo, openai, modelo):
     # Estrutura criada para salvar o conteúdo da variável response em um arquivo de texto
     with open(f".venv/{nome_arquivo}-transcricao.txt", "w", encoding="utf-8") as arquivo_transcrito:
         arquivo_transcrito.write(response.text)
+    # Exibição de mensagem
+    print("Transcrição finalizada!")
     # Retorno do conteúdo da variável response como um texto
     return response.text
 
@@ -35,11 +37,6 @@ def main():
     openai.api_key = os.getenv("OPENAI_API_KEY")
     # Declaração de variável e atribuição do valor de retorno do método openai_transcrever
     transcricao = openai_trasncrever(caminho_audio, nome_arquivo, openai, modelo_whisper)
-    
-
-
-
-
 
 # Chamada para execução da função main automaticamente ao chamar o arquivo main
 if __name__ == "__main__":
