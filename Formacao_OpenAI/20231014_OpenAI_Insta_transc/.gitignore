@@ -1,3 +1,5 @@
 .env
 media
 *.txt
+*.exe
+*.mp3
