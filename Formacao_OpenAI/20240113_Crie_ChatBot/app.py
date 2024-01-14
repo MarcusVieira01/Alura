@@ -8,7 +8,7 @@ def bot(prompt):
     while True:
         try:
             model='gpt-3.5-turbo-16k'
-            prompt_do_sistema = f"""
+            prompt_do_sistema = """
             Você é um chatbot de atendimento a clientes de um e-commerce.
             Você não deve responder perguntas que não sejam dados do ecommerce informado!
             """
@@ -23,7 +23,7 @@ def bot(prompt):
                         "content": prompt
                     }
                 ],
-                # stream = True,
+                stream = True,
                 temperature=1,
                 max_tokens=256,
                 top_p=1,
@@ -52,11 +52,24 @@ def home():
 
 @app.route("/chat", methods = ['POST'])
 def chat():
-    print(f"\nMensagem cliente: {request.json['msg']}\n")
-    resposta_chat = bot(request.json['msg']).choices[0].message.content
-    print(f"\nResposta do chatbot: {resposta_chat}\n")
+    prompt = request.json['msg']
+    return Response(trataResposta(prompt), mimetype = 'text/event-stream')
 
-    return resposta_chat
+    return
+    ## Com ativação do stream = True, o código abaixo ficou obsoleto
+    # print(f"\nMensagem cliente: {request.json['msg']}\n")
+    # resposta_chat = bot(request.json['msg']).choices[0].message.content
+    # print(f"\nResposta do chatbot: {resposta_chat}\n")
+
+    # return resposta_chat
+
+def trataResposta(prompt):
+    respostaParcial = ''
+    for resposta in bot(prompt):
+        pedacoResposta = resposta.choices[0].delta.get('content', '')
+        if len(pedacoResposta):
+            respostaParcial += pedacoResposta
+            yield pedacoResposta    
 
 if __name__ == "__main__":
     app.run(debug = True)
