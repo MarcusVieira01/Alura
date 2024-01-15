@@ -1,6 +1,6 @@
 def carrega(nome_do_arquivo):
     try:
-        with open(nome_do_arquivo, "r") as arquivo:
+        with open(nome_do_arquivo, "r", encoding='utf-8') as arquivo:
             dados = arquivo.read()
             return dados
     except IOError as e:
