@@ -56,12 +56,15 @@ def bot(prompt, historico):
 
 def trataResposta(prompt, historico, nome_arquivo):
     respostaParcial = ''
-    for resposta in bot(prompt, historico):
+    limiteTokens = 256
+    historicoParcial = limita_historico(historico, limiteTokens)
+    for resposta in bot(prompt, historicoParcial):
         pedacoResposta = resposta.choices[0].delta.get('content', '')
         if len(pedacoResposta):
             respostaParcial += pedacoResposta
             yield pedacoResposta
     conteudo = f"""
+Histórico: {historicoParcial}
 usuário: {prompt}
 IA: {respostaParcial}
 """
@@ -77,16 +80,35 @@ def carrega(nome_arquivo):
 
 def salva(nome_arquivo, conteudo):
     try:
-        with open(nome_arquivo, 'a', encoding='utf-8') as arquivo:
+        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
             arquivo.write(conteudo)
     except IOError as e:
         print(f"Erro ao salvar o arquivo: {e}")
+
+## Comentado para limitação do histórico funcionar
+# def salva(nome_arquivo, conteudo):
+#     try:
+#         with open(nome_arquivo, 'a', encoding='utf-8') as arquivo:
+#             arquivo.write(conteudo)
+#     except IOError as e:
+#         print(f"Erro ao salvar o arquivo: {e}")
 
 def conta_tokens(prompt):
     codificador = tiktoken.encoding_for_model("gpt-3.5-turbo")
     lista_de_tokens = codificador.encode(prompt)
     contagem = len(lista_de_tokens)
     return contagem
+
+def limita_historico(historico, limiteTokens):
+    totalTokens = 0
+    historicoParcial = ''
+    for linha in reversed(historico.split('\n')):
+        tokensLinha = conta_tokens(linha)
+        totalTokens = totalTokens + tokensLinha
+        if (totalTokens > limiteTokens):
+            break
+        historicoParcial += linha + historicoParcial
+    return historicoParcial
 
 
 app = Flask(__name__)
@@ -119,6 +141,16 @@ def chat():
     # print(f"\nResposta do chatbot: {resposta_chat}\n")
 
     # return resposta_chat
+
+@app.route('/limparhistorico', methods = ['POST'])
+def limparhistorico():
+    nomeArquivo = 'historico.txt'
+    if os.path.exists(nomeArquivo):
+        os.remove(nomeArquivo)
+        print(f"Arquivo {nomeArquivo} removido!")
+    else:
+        print(f"Arquivo{nomeArquivo} não encontrado")
+    return{}
 
 if __name__ == "__main__":
     app.run(debug = True)
