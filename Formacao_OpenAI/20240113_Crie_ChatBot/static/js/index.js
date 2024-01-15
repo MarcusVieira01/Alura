@@ -15,7 +15,7 @@ async function enviarMensagem() {
     chat.appendChild(novaBolhaBot);
     vaiParaFinalDoChat();
     
-    // Envia requisição com a mensagem para a API do ChatBot
+// Envia requisição com a mensagem para a API do ChatBot
     const resposta = await fetch("http://127.0.0.1:5000/chat", {
         method: "POST",
         headers: {
@@ -23,6 +23,7 @@ async function enviarMensagem() {
         },
         body: JSON.stringify({'msg':mensagem}),
     });
+
     const decodificador = new TextDecoder();
     const leitorDaResposta = resposta.body.getReader();
     let respostaParcial = "";
@@ -36,19 +37,7 @@ async function enviarMensagem() {
         novaBolhaBot.innerHTML = respostaParcial;
         vaiParaFinalDoChat();
     }
-
     
-    // DEPRECIADO POR CAUSA DO STREAM = TRUE NO PYTHON
-    // const textoDaResposta = await resposta.text();
-    // novaBolhaBot.innerHTML = textoDaResposta;
-    // vaiParaFinalDoChat();
-}
-
-function limparConversa(){
-    const limpar = fetch("http://127.0.0.1:5000/limparhistorico", {
-        method: "POST"
-    });
-    chat.innerHTML = "<p class='chat__bolha chat__bolha--bot'>Olá! Eu sou o assistente virtual da EcoMart ~<br/><br/>Como posso te ajudar?</p>";
 }
 
 function criaBolhaUsuario() {
@@ -74,3 +63,10 @@ input.addEventListener("keyup", function(event) {
         botaoEnviar.click();
     }
 });
+
+function limparConversa(){
+    const limpar = fetch("http://127.0.0.1:5000/limparhistorico", {
+        method: "POST"
+    });
+    chat.innerHTML = "<p class='chat__bolha chat__bolha--bot'>Olá! Eu sou o assistente virtual da EcoMart ~<br/><br/>Como posso te ajudar?</p>";
+}
