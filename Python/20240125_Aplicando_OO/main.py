@@ -1,5 +1,7 @@
 from models.Restaurante import Restaurante
 
-restaurante_praca = Restaurante('Praça', "Gourmet")
+restaurante_praca = Restaurante('praça', "gourmet")
+restaurante_pizza = Restaurante('pizza express', "fastfood")
 
-print(restaurante_praca)
+print(Restaurante.listar_restaurantes(Restaurante))
+
