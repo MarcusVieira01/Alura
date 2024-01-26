@@ -5,4 +5,6 @@ class Prato(ItemCardapio):
         # Evocação do construtor da superclasse para os atributos nome e preço
         super().__init__(nome, preco) 
         self.descricao = descricao
-        
+
+    def __str__(self):
+        return f'Nome: {self._nome}'
