@@ -73,6 +73,8 @@ class Restaurante:
             self._cardapio.append(item)
 
     def exibe_cardapio(self):
+        '''Função que exibe os atributos do objeto do tipo ItemCardapio do atributo cardapio de um 
+        objeto do tipo Restaurante conforme os dois tipos de item do cardápio'''
         print(f'Cardápio do restaurante {self._nome}:')
         print(f'{"Nome".ljust(22)} | {"Descrição/Tamanho".ljust(20)} | {"Preço"}')
         for indice, item in enumerate(self._cardapio, start=1):
