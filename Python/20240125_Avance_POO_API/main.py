@@ -10,6 +10,9 @@ restaurante_praca = Restaurante('praça gourmet', 'gourmet')
 restaurante_praca.adiciona_no_cardapio(bebida_suco)
 restaurante_praca.adiciona_no_cardapio(prato_paozinho)
 
+bebida_suco.aplicar_desconto()
+prato_paozinho.aplicar_desconto()
+
 def main():
     restaurante_praca.exibe_cardapio()
 
