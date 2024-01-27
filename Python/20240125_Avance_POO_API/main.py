@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Query
-import requests, json
+import requests
 
 app = FastAPI()
 
