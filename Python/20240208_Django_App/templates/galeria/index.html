@@ -1,3 +1,6 @@
+{% extends 'galeria/base.html' %}
+{% load static %}
+{% block content %}
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png'%}" alt="Logo da Alura Space" />
@@ -142,6 +145,4 @@
         </div>
         <p class="rodape__texto">Desenvolvido por Alura</p>
     </footer>
-</body>
-
-</html>
+{% endblock %}
